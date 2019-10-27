@@ -1,0 +1,32 @@
+   mmmmmmmmm mmmm//extends ../../master
+
+block data
+    include ../../utilties/product-mixins
+    include ../../data/shop/shop-data
+    include ../../data/shop/shop-sidebar-links
+    include ../../data/shop/shop-product-features
+    include ../../data/product/product-default
+    include ../../data/home-6/categories
+block page_header
+    - var currentPage = 'shop'
+    include ../../shared/headers/header-1
+    include ../../shared/headers/header-mobile
+
+block page_content
+    .ps-breadcrumb
+        .container
+            ul.breadcrumb
+                li: a(href='index.html') Home
+                li Shop categories
+    #shop-categories.ps-page--shop
+        .container
+            include ../../partials/shop/modules/categories-categories
+            include ../../partials/shop/modules/categories-best-seller
+            include ../../partials/shop/modules/categories-recommend-items
+            include ../../partials/shop/modules/categories-categories-box
+            include ../../partials/shop/modules/categories-more-categories
+    include ../../partials/sections/newsletter
+    include ../../shared/footers/footer
+    include ../../shared/shop-filter
+
+

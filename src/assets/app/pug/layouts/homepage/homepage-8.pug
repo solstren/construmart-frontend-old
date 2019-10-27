@@ -1,0 +1,31 @@
+extends ../../master
+
+block data
+    include ../../utilties/product-mixins
+    include ../../data/home-8/home-data
+
+block append style
+    link(rel="stylesheet", href="css/furniture.css")
+
+block page_header
+    - var currentPage = 'homepage'
+    include ../../shared/headers/header-furniture
+    include ../../shared/headers/header-mobile
+
+block page_content
+    #homepage-8
+        - let layout = 'default';
+        include ../../partials/homepages/home-8/home-banner
+        include ../../partials/sections/site-features
+        include ../../partials/homepages/home-8/home-promotions
+        include ../../partials/homepages/home-8/home-best-seller
+
+        include ../../partials/homepages/home-8/home-categories
+        .ps-home-promotion-2
+            .container
+                a(href='#'): img(src="img/promotions/home-8/3.jpg" alt="")
+        include ../../partials/homepages/home-8/home-trending-products
+        include ../../partials/homepages/home-8/home-shop-by-room
+        include ../../partials/sections/best-sale-brands
+    - let footer = 'default';
+    include ../../shared/footers/footer-furniture

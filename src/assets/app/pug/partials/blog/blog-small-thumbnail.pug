@@ -1,0 +1,23 @@
+.ps-blog--sidebar
+    .ps-blog__left
+        each post in blogGrid
+            if post.type === 'normal'
+                .ps-post.ps-post--small-thumbnail
+                    .ps-post__thumbnail
+                        a(href='blog-detail.html').ps-post__overlay
+                        img(src=post.imagePath alt="")
+                        if post.badge
+                            .ps-post__badge: i(class=post.badge)
+                    .ps-post__content
+                        .ps-post__top
+                            .ps-post__meta
+                                each category in post.categories
+                                    a(href='#') #{category}
+                            a(href='#').ps-post__title #{post.title}
+                            p Lorem ipsum dolor sit amet, dolor siterim consectetur adipiscing elit. Phasellus duio faucibus est sed…
+                        .ps-post__bottom
+                            p December 17, 2017 by
+                                a(href='#')  drfurion
+        +pagination
+    .ps-blog__right
+        include modules/blog-sidebar

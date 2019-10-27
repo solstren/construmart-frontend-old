@@ -1,0 +1,14 @@
+.ps-blog--sidebar.reverse
+    .ps-blog__left
+        each post in blogGrid
+            if post.type !== 'normal'
+                +blogStandard(post)
+        .row
+            each post in blogGrid
+                if post.type === 'normal'
+                    +column({cols: [6, 6, 6, 6, 12]})
+                        +blogStandard(post)
+        +pagination
+    .ps-blog__right
+        include modules/blog-sidebar
+

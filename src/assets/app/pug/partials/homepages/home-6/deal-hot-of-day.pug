@@ -1,0 +1,141 @@
+.ps-deal-hot
+    .container
+        .row
+            +column({cols: [9, 12, 12, 12, 12]})
+                .ps-block--deal-hot(data-mh="dealhot")
+                    .ps-block__header
+                        h3 Deal hot today
+                        .ps-block__navigation
+                            a(href='.ps-carousel--deal-hot').ps-carousel__prev: i.icon-chevron-left
+                            a(href='.ps-carousel--deal-hot').ps-carousel__next: i.icon-chevron-right
+                    .ps-product__content
+                        .ps-carousel--deal-hot.ps-carousel--deal-hot.owl-slider(
+                        data-owl-auto= 'true',
+                        data-owl-loop= 'true',
+                        data-owl-speed= '5000',
+                        data-owl-gap= '0',
+                        data-owl-nav= 'false',
+                        data-owl-dots= 'false',
+                        data-owl-item= '1',
+                        data-owl-item-xs= '1',
+                        data-owl-item-sm= '1',
+                        data-owl-item-md= '1',
+                        data-owl-item-lg= '1',
+                        data-owl-duration= '1000',
+                        data-owl-mousedrag= 'on'
+                        )
+                            .ps-product--detail.ps-product--hot-deal
+                                .ps-product__header
+                                    .ps-product__thumbnail( data-vertical='true')
+                                        figure
+                                            .ps-wrapper
+                                                .ps-product__gallery(data-arrow="true")
+                                                    .item: a(href='img/products/home-6/deal-hot/a-1.jpg'): img(src="img/products/home-6/deal-hot/a-1.jpg" alt="")
+                                                    .item: a(href='img/products/home-6/deal-hot/a-2.jpg'): img(src="img/products/home-6/deal-hot/a-2.jpg" alt="")
+                                                    .item: a(href='img/products/home-6/deal-hot/a-3.jpg'): img(src="img/products/home-6/deal-hot/a-3.jpg" alt="")
+                                                .ps-product__badge: span Save <br> $280.000
+                                        .ps-product__variants(data-item=4 data-md=3 data-sm=3 data-arrow="false")
+                                            .item: img(src="img/products/home-6/deal-hot/a-1.jpg" alt="")
+                                            .item: img(src="img/products/home-6/deal-hot/a-2.jpg" alt="")
+                                            .item: img(src="img/products/home-6/deal-hot/a-3.jpg" alt="")
+                                    .ps-product__info
+                                        h5 Clothing & Apparel
+                                        h3.ps-product__name Herschel Leather Duffle Bag In Brown Color
+                                        .ps-product__meta
+
+                                            h4.ps-product__price.sale $36.78 <del> $56.99</del>
+                                            .ps-product__rating
+                                                +rating(true)
+                                                span (1 review)
+                                            .ps-product__specification
+                                                p Status:
+                                                    strong.in-stock  In Stock
+                                        .ps-product__expires
+                                            p Expires In
+                                            ul.ps-countdown(data-time="July 21, 2019 23:00:00")
+                                                li <span class="days"></span>
+                                                    p Days
+                                                li <span class="hours"></span>
+                                                    p Hours
+                                                li <span class="minutes"></span>
+                                                    p Minutes
+                                                li <span class="seconds"></span>
+                                                    p Seconds
+                                        .ps-product__processs-bar
+                                            .ps-progress(data-value=10)
+                                                span.ps-progress__value
+                                            p
+                                                strong 4/79
+                                                |   Sold
+                            .ps-product--detail.ps-product--hot-deal
+                                .ps-product__header
+                                    .ps-product__thumbnail( data-vertical='true')
+                                        figure
+                                            .ps-wrapper
+                                                .ps-product__gallery(data-arrow="true")
+                                                    .item: a(href='img/products/home-6/deal-hot/b-1.jpg'): img(src="img/products/home-6/deal-hot/b-1.jpg" alt="")
+                                                    .item: a(href='img/products/home-6/deal-hot/b-2.jpg'): img(src="img/products/home-6/deal-hot/b-2.jpg" alt="")
+                                                    .item: a(href='img/products/home-6/deal-hot/b-3.jpg'): img(src="img/products/home-6/deal-hot/b-3.jpg" alt="")
+                                                    .item: a(href='img/products/home-6/deal-hot/b-4.jpg'): img(src="img/products/home-6/deal-hot/b-4.jpg" alt="")
+                                                .ps-product__badge: span Save <br> $9.000
+                                        .ps-product__variants(data-item=4 data-md=3 data-sm=3 data-arrow="false")
+                                            .item: img(src="img/products/home-6/deal-hot/b-1.jpg" alt="")
+                                            .item: img(src="img/products/home-6/deal-hot/b-2.jpg" alt="")
+                                            .item: img(src="img/products/home-6/deal-hot/b-3.jpg" alt="")
+                                            .item: img(src="img/products/home-6/deal-hot/b-4.jpg" alt="")
+                                    .ps-product__info
+                                        h5 Consumer Electrics
+                                        h3.ps-product__name Evolution Sport Drilled and Slotted Brake Kit
+                                        .ps-product__meta
+
+                                            h4.ps-product__price.sale $97.78 <del> $156.99</del>
+                                            .ps-product__rating
+                                                +rating(true)
+                                                span (1 review)
+                                            .ps-product__specification
+                                                p Status:
+                                                    strong.in-stock  In Stock
+                                        .ps-product__expires
+                                            p Expires In
+                                            ul.ps-countdown(data-time="July 21, 2019 23:00:00")
+                                                li <span class="days"></span>
+                                                    p Days
+                                                li <span class="hours"></span>
+                                                    p Hours
+                                                li <span class="minutes"></span>
+                                                    p Minutes
+                                                li <span class="seconds"></span>
+                                                    p Seconds
+                                        .ps-product__processs-bar
+                                            .ps-progress(data-value=60)
+                                                span.ps-progress__value
+                                            p
+                                                strong 30/50
+                                                |   Sold
+            +column({cols: [3, 12, 12, 12, 12]})
+                aside.widget.widget_best-sale(data-mh="dealhot")
+                    h3.widget-title Top 20 Best Seller
+                    .widget__content
+                        .owl-slider(
+                        data-owl-auto= 'true',
+                        data-owl-loop= 'true',
+                        data-owl-speed= '5000',
+                        data-owl-gap= '0',
+                        data-owl-nav= 'false',
+                        data-owl-dots= 'false',
+                        data-owl-item= '1',
+                        data-owl-item-xs= '1',
+                        data-owl-item-sm= '1',
+                        data-owl-item-md= '1',
+                        data-owl-item-lg= '1',
+                        data-owl-duration= '1000',
+                        data-owl-mousedrag= 'on'
+                        )
+                            .ps-product-group
+                                each product, index in home_3_technology
+                                    if  index <= 3
+                                        +product-horizontal(product)
+                            .ps-product-group
+                                each product, index in home_3_technology
+                                    if  index > 1
+                                        +product-horizontal(product)

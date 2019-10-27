@@ -1,0 +1,30 @@
+.ps-product-list.ps-product-list--2
+    .container
+        .ps-section__header
+            h3 Home Electronics
+            ul.ps-section__links
+                li: a(href='shop-grid.html') Smart
+                li: a(href='shop-grid.html') TV LED
+                li: a(href='shop-grid.html') TVs
+                li: a(href='shop-grid.html') Air Conditions
+                li: a(href='shop-grid.html') Sony Speakers
+                li: a(href='shop-grid.html') Panasonic Refrigerators
+        .ps-section__content
+            .ps-carousel--nav.owl-slider(
+            data-owl-auto= 'false',
+            data-owl-loop= 'false',
+            data-owl-speed= '10000',
+            data-owl-gap= '0',
+            data-owl-nav= 'true',
+            data-owl-dots= 'true',
+            data-owl-item= '5',
+            data-owl-item-xs= '2',
+            data-owl-item-sm= '2',
+            data-owl-item-md= '2',
+            data-owl-item-lg= '3',
+            data-owl-item-xl= '5',
+            data-owl-duration= '1000',
+            data-owl-mousedrag= 'on'
+            )
+                each product in homeElectronic
+                    +product(product)

@@ -1,0 +1,32 @@
+extends ../../master
+
+block data
+    include ../../utilties/product-mixins
+    include ../../data/shop/shop-data
+    include ../../data/shop/shop-sidebar-links
+
+
+block page_header
+    - var currentPage = 'homepage'
+    include ../../shared/headers/header-1
+    include ../../shared/headers/header-mobile
+
+block page_content
+
+    .ps-page--single
+        .ps-breadcrumb
+            .container
+                ul.breadcrumb
+                    li: a(href='index.html') Home
+                    li Become a Vendor
+        include ../../partials/pages/vendor/vendor-banner
+        include ../../partials/pages/vendor/vendor-about
+        include ../../partials/pages/vendor/vendor-milestone
+        include ../../partials/pages/vendor/vendor-best-fees
+        include ../../partials/pages/vendor/vendor-testimonial
+        include ../../partials/pages/vendor/vendor-faqs
+        include ../../partials/pages/vendor/vendor-banner-footer
+    include ../../partials/sections/newsletter
+    include ../../shared/footers/footer
+
+

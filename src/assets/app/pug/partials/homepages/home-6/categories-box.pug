@@ -1,0 +1,50 @@
+.ps-categories-box
+    .container
+        .ps-block--categories-box
+            .ps-block__header
+                h3 Consumer Electronics
+                ul
+                    li: a(href='shop-default.html') New Arrivals
+                    li: a(href='shop-default.html') Best Seller
+            .ps-block__content
+                each category, index in electronicCollection
+                    if category.type === 'large'
+                        .ps-block__banner: img(src=category.imagePath alt="")
+                    else
+                        .ps-block__item
+                            a(href='shop-default.html').ps-block__overlay
+                            img(src=category.imagePath alt="")
+                            p #{category.text}
+                            span #{category.item} Items
+        .ps-block--categories-box
+            .ps-block__header
+                h3 Clothing & Apparel
+                ul
+                    li: a(href='shop-default.html') New Arrivals
+                    li: a(href='shop-default.html') Best Seller
+            .ps-block__content
+                each category, index in clothingCollection
+                    if category.type === 'large'
+                        .ps-block__banner: img(src=category.imagePath alt="")
+                    else
+                        .ps-block__item
+                            a(href='shop-default.html').ps-block__overlay
+                            img(src=category.imagePath alt="")
+                            p #{category.text}
+                            span #{category.item} Items
+        .ps-block--categories-box
+            .ps-block__header
+                h3 Home, Garden & Kitchen
+                ul
+                    li: a(href='shop-default.html') New Arrivals
+                    li: a(href='shop-default.html') Best Seller
+            .ps-block__content
+                each category, index in kitchenCollection
+                    if category.type === 'large'
+                        .ps-block__banner: img(src=category.imagePath alt="")
+                    else
+                        .ps-block__item
+                            a(href='shop-default.html').ps-block__overlay
+                            img(src=category.imagePath alt="")
+                            p #{category.text}
+                            span #{category.item} Items

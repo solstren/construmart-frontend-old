@@ -1,0 +1,86 @@
+include ../../data/menu/menu
+include ../../data/menu/menu-product-categories
+include ../../data/menu/menu-market-2
+header.header.header--standard.header--market-place-2(data-sticky="true")
+    .header__top
+        .container
+            .header__left
+                p Welcome to Martfury Online Shopping Store !
+            .header__right
+                ul.header__top-links
+                    li: a(href='#') Store Location
+                    li: a(href='#') Track Your Order
+                    li
+                        .ps-dropdown
+                            a(href='#') US Dollar
+                            ul.ps-dropdown-menu
+                                li: a(href='#') Us Dollar
+                                li: a(href='#') Euro
+                    li
+                        .ps-dropdown.language
+                            a(href='#')
+                                img(src="img/flag/en.png" alt="")
+                                | English
+                            ul.ps-dropdown-menu
+                                li: a(href='#')
+                                    img(src="img/flag/germany.png" alt="")
+                                    |  Germany
+                                li: a(href='#')
+                                    img(src="img/flag/fr.png" alt="")
+                                    |  France
+    .header__content
+        .container
+            .header__content-left
+                a(href='index.html').ps-logo: img(src="img/logo.png" alt="")
+                include modules/menu-dropdown
+            .header__content-center
+                form(action="index.html" method="get" class="ps-form--quick-search")
+                    .form-group--icon
+                        i.icon-chevron-down
+                        select.form-control
+                            option(value="1") All
+                            option(value="1") Smartphone
+                            option(value="1") Sounds
+                            option(value="1") Technology toys
+                    input.form-control(type="text" placeholder="I'm shopping for...")
+                    button Search
+                p
+                    a(href='#') iphone x
+                    a(href='#') virtual
+                    a(href='#') apple
+                    a(href='#') wireless
+                    a(href='#') simple chair
+                    a(href='#') classic watch
+                    a(href='#') macbook
+            .header__content-right
+                .header__actions
+                    a(href='#').header__extra
+                        i.icon-heart
+                        span: i 0
+                    .ps-cart--mini
+                        a(href='#').header__extra
+                            i.icon-bag2
+                            span: i 0
+                        include modules/mini-cart
+                    .ps-block--user-header
+                        .ps-block__left: i.icon-user
+                        .ps-block__right
+                            a(href='my-account.html') Login
+                            a(href='my-account.html') Register
+    nav.navigation
+        .container
+            +createMenu(menuMarket2, 'menu menu--market-2')
+
+
+
+
+
+
+
+
+
+
+
+
+
+

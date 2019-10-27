@@ -1,0 +1,20 @@
+extends ../../master
+
+block data
+    include ../../utilties/product-mixins
+    include ../../data/shop/shop-data
+    include ../../data/shop/shop-sidebar-links
+
+block page_header
+    - var currentPage = 'homepage'
+    include ../../shared/headers/header-1
+    include ../../shared/headers/header-mobile
+block page_content
+    .ps-page--404
+        .container
+            include ../../partials/pages/404-page
+    include ../../partials/sections/newsletter
+    include ../../shared/footers/footer
+    include ../../shared/shop-filter
+
+

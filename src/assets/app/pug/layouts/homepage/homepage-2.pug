@@ -1,0 +1,28 @@
+extends ../../master-2
+
+block data
+    include ../../utilties/product-mixins
+    include ../../data/home-3/home-2/home-2-products
+
+block append style
+    link(rel="stylesheet", href="css/autopart.css")
+
+block page_header
+    - var currentPage = 'homepage'
+    include ../../shared/headers/header-automart
+    include ../../shared/headers/header-mobile
+
+block page_content
+    #homepage-2
+        - let layout = 'default';
+        include ../../partials/homepages/home-2/home-banner
+        include ../../partials/homepages/home-2/categories
+        include ../../partials/homepages/home-2/promotions
+        include ../../partials/homepages/home-2/recommend-for-you
+        include ../../partials/homepages/home-2/deal-hot
+        include ../../partials/homepages/home-2/promotions-2
+        include ../../partials/sections/best-sale-brands
+        include ../../partials/sections/client-say
+        include ../../partials/sections/site-features
+    include ../../shared/footers/footer-2
+

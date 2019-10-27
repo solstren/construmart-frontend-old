@@ -1,0 +1,28 @@
+.ps-product-list.ps-garden-kitchen
+    .ps-container
+        .ps-section__header
+            h3 Home, Garden & Kitchen
+            ul.ps-section__links
+                li: a(href='shop-grid.html') New Arrivals
+                li: a(href='shop-grid.html') Best seller
+                li: a(href='shop-grid.html') Must Popular
+                li: a(href='shop-grid.html') View All
+        .ps-section__content
+            .ps-carousel--responsive.owl-slider(
+            data-owl-auto= 'true',
+            data-owl-loop= 'true',
+            data-owl-speed= '10000',
+            data-owl-gap= '0',
+            data-owl-nav= 'false',
+            data-owl-dots= 'true',
+            data-owl-item= '7',
+            data-owl-item-xs= '2',
+            data-owl-item-sm= '2',
+            data-owl-item-md= '3',
+            data-owl-item-lg= '4',
+            data-owl-item-xl= '6',
+            data-owl-duration= '1000',
+            data-owl-mousedrag= 'on'
+            )
+                each val in home_1_garden_kitchen
+                    +product(val)

@@ -1,0 +1,13 @@
+#subscribe.ps-popup(data-time=500)
+    .ps-popup__content.bg--cover(data-background='img/bg/subscribe.jpg')
+        a(href='#').ps-popup__close: i.icon-cross
+        form(action="index.html" method="get" class="ps-form--subscribe-popup")
+            .ps-form__content
+                h4 Get <strong>25%</strong> Discount
+                p Subscribe to the Martfury mailing list <br /> to receive updates on new arrivals, special offers <br /> and our promotions.
+                .form-group
+                    input.form-control(type="text" placeholder="Email Address" required)
+                    button.ps-btn Subscribe
+                +checkbox('not-show', 'not-show', "Don\'t show this popup again", '', '')
+
+

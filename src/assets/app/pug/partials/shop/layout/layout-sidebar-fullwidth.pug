@@ -1,0 +1,41 @@
+.ps-layout--shop
+    .ps-layout__left
+        include ../modules/sidebar
+    .ps-layout__right
+        include ../modules/best-sale-fullwidth
+        include ../modules/recommended-item-fullwidth
+        .ps-shopping.ps-tab-root
+            a(href='#').ps-shop__filter-mb#filter-sidebar
+                i.icon-menu
+                |  Show Filter
+            .ps-shopping__header
+                p <strong> 36</strong> Products found
+                .ps-shopping__actions
+                    select.ps-select(data-placeholder="Sort Items")
+                        option Sort by latest
+                        option Sort by popularity
+                        option Sort by average rating
+                        option Sort by price: low to high
+                        option Sort by price: high to low
+                    .ps-shopping__view
+                        p View
+                        ul.ps-tab-list
+                            li.active: a(href='#tab-1'): i.icon-grid
+                            li: a(href='#tab-2'): i.icon-list4
+            .ps-tabs
+                #tab-1.ps-tab.active
+                    .row
+                        each val, index in shop_products
+                            if index < 12
+                                +column({cols: [2, 4, 4, 6, 6]})
+                                    +product(val)
+                    +pagination
+                #tab-2.ps-tab
+                    each val, index in shop_products
+                        if index < 12
+                            +product-wide(val)
+                    +pagination
+
+
+
+

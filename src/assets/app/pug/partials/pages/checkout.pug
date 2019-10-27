@@ -1,0 +1,71 @@
+mixin form-input(label, required=true, extraClass, type='text', inputClass='form-control')
+    .form-group(class=extraClass)
+        label #{label}
+            if (required == true)
+                sup *
+        .form-group__content
+            input(type=type, class=inputClass)
+.ps-checkout.ps-section--shopping
+    .container
+        .ps-section__header: h1 Compare Product
+        .ps-section__content
+            form(action="do_action" method="post" class="ps-form--checkout")
+                .row
+                    +column({cols: [7, 8, 12, 12]})
+                        .ps-form__billing-info
+                            h3.ps-form__heading Billing Details
+                            +form-input("First Name", required)
+                            +form-input("Last Name", required)
+                            +form-input("Company Name", required)
+                            +form-input("Email Address", required, '', type='email')
+                            +form-input("Country", required)
+                            +form-input("Phone", required)
+                            +form-input("Address", required)
+                            .form-group
+                                .ps-checkbox
+                                    input.form-control(type="checkbox"  id="create-account")
+                                    label(for="create-account") Create an account?
+                            .form-group
+                                .ps-checkbox
+                                    input.form-control(type="checkbox"  id="cb01")
+                                    label(for="cb01") Ship to a different address?
+                            h3.mt-40  Addition information
+                            .form-group
+                                label Order Notes
+                                .form-group__content
+                                    textarea.form-control(rows='7' placeholder='Notes about your order, e.g. special notes for delivery.')
+                    +column({cols: [5, 4, 12, 12]})
+                        .ps-form__total
+                            h3.ps-form__heading Your Order
+                            .content
+                                .ps-block--checkout-total
+                                    .ps-block__header
+                                        p Product
+                                        p Total
+                                    .ps-block__content
+                                        table.table.ps-block__products
+                                            tbody
+                                                tr
+                                                    td
+                                                         a(href='#')  MVMTH Classical Leather Watch In Black ×1
+                                                         p Sold By:
+                                                             strong YOUNG SHOP
+                                                    td $57.99
+                                                tr
+                                                    td
+                                                         a(href='#')  Apple Macbook Retina Display 12” 	× 1
+                                                         p Sold By:
+                                                             strong ROBERT’S STORE
+                                                    td $625.50
+                                        h4.ps-block__title Subtotal <span>$863.49</span>
+                                        .ps-block__shippings
+                                            figure
+                                                h4 YOUNG SHOP Shipping
+                                                p Free shipping
+                                                a(href='#')  MVMTH Classical Leather Watch In Black ×1
+                                            figure
+                                                h4 ROBERT’S STORE Shipping
+                                                p Free shipping
+                                                a(href='#') Apple Macbook Retina Display 12” ×1
+                                        h3 Total <span>$683.49</span>
+                                a(href='checkout.html').ps-btn.ps-btn--fullwidth Proceed to checkout

@@ -1,0 +1,13 @@
+.ps-newsletter
+    .ps-container
+        form(action="do_action" method="post" class="ps-form--newsletter")
+            .row
+                +column({cols: [5, 12, 12, 12, 12]})
+                    .ps-form__left
+                        h3 Newsletter
+                        p Subcribe to get information about products and coupons
+                +column({cols: [7, 12, 12, 12, 12]})
+                    .ps-form__right
+                        .form-group--nest
+                            input.form-control(type="email" placeholder="Email address")
+                            button.ps-btn Subscribe

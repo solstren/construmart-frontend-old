@@ -1,0 +1,11 @@
+.ps-top-categories
+    .container
+        h3 Top categories of the month
+        .row
+             each category in homeCategories
+                  +column({cols: [2, 3, 4, 6, 12]})
+                     .ps-block--category(data-mh="categories")
+                         .ps-block__thumbnail: img(src=category.imagePath alt="")
+                         .ps-block__content
+                             p #{category.title}
+

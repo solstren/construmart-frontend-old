@@ -1,0 +1,61 @@
+.ps-deal-of-day
+    .container
+        .ps-section__header
+            .ps-block--countdown-deal
+                .ps-block__left: h3 Deals of the day
+                .ps-block__right
+                    figure
+                        figcaption End in:
+                        ul.ps-countdown(data-time="July 21, 2019 15:37:25")
+                            li <span class="days"></span>
+                            li <span class="hours"></span>
+                            li <span class="minutes"></span>
+            a(href='shop-default.html') View all
+        .ps-section__content
+            .ps-carousel--nav.owl-slider(
+            data-owl-auto= 'true',
+            data-owl-loop= 'true',
+            data-owl-speed= '5000',
+            data-owl-gap= '30',
+            data-owl-nav= 'true',
+            data-owl-dots= 'true',
+            data-owl-item= '5',
+            data-owl-item-xs= '2',
+            data-owl-item-sm= '3',
+            data-owl-item-md= '4',
+            data-owl-item-lg= '4',
+            data-owl-item-xl= '5',
+            data-owl-duration= '1000',
+            data-owl-mousedrag= 'on'
+            )
+                each val in home_1_garden_kitchen
+                    .ps-product.ps-product--inner
+                        .ps-product__thumbnail
+                            a(href='product-default.html'): img(src=val.thumbnail alt="")
+                            if val.badge
+                                each badge in val.badge
+                                    if badge.type == 'sale'
+                                        .ps-product__badge #{badge.value}
+                                    if badge.type == 'outStock'
+                                        .ps-product__badge.out-stock #{badge.value}
+                                    if badge.type == 'hot'
+                                        .ps-product__badge.hot #{badge.value}
+                            ul.ps-product__actions
+                                li: a(href='#' data-toggle="tooltip" data-placement="top" title="Read More"): i.icon-bag2
+                                li: a(href='#' data-toggle="tooltip" data-placement="top" title="Quick View"): i.icon-eye
+                                li: a(href='#' data-toggle="tooltip" data-placement="top" title="Add to Whishlist"): i.icon-heart
+                                li: a(href='#' data-toggle="tooltip" data-placement="top" title="Compare"): i.icon-chart-bars
+                        .ps-product__container
+                            p.ps-product__price(class=(val.sale === true) ? 'sale' : '') !{val.price}
+                                small 18% off
+                            .ps-product__content
+                                a(href='product-default.html').ps-product__title #{val.title}
+                                if val.rating === true
+                                    .ps-product__rating
+                                        +rating(true)
+                                        span #{val.ratingCount}
+
+                                .ps-product__progress-bar.ps-progress(data-value=Math.round(Math.random() * 100))
+                                    .ps-progress__value: span
+                                    p Sold:
+                                        | #{Math.round(Math.random() * 100)}

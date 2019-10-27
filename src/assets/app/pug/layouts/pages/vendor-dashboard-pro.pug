@@ -1,0 +1,35 @@
+extends ../../master
+
+block data
+    include ../../utilties/product-mixins
+    include ../../data/shop/shop-data
+    include ../../data/shop/shop-sidebar-links
+    include ../../data/home-10/home-data
+block prepend page_scripts
+    script(src="plugins/Chart.js/Chart.min.js")
+
+block append page_scripts
+    script(src="js/chart.js")
+
+block page_header
+    - var currentPage = 'homepage'
+    include ../../shared/headers/header-market-place-1-no-banner
+    include ../../shared/headers/header-mobile
+
+block append style
+    link(rel="stylesheet", href="css/market-place-1.css")
+
+block page_content
+    .ps-page--single
+        .ps-breadcrumb
+            .container
+                ul.breadcrumb
+                    li: a(href='index.html') Home
+                    li: a(href='index.html') Pages
+                    li: a(href='vendor-store.html') Vendor Pages
+                    li Vendor Dashboard Pro
+    include ../../partials/pages/vendor/vendor-dashboard-pro
+    include ../../partials/sections/newsletter
+    include ../../shared/footers/footer-2
+
+

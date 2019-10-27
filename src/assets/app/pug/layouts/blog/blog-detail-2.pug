@@ -1,0 +1,23 @@
+extends ../../master
+block data
+    include ../../data/shop/shop-sidebar-links
+    include ../../data/blog/blog-grid
+    include ../../data/home-1/home-products
+
+block page_header
+    - var currentPage = 'shop'
+    include ../../shared/headers/header-1
+    include ../../shared/headers/header-mobile
+
+block page_content
+    .ps-page--blog
+        include ../../partials/blog/blog-detail-2
+        include ../../partials/blog/modules/blog-author
+        include ../../partials/blog/modules/blog-related-posts
+        include ../../partials/blog/modules/blog-post-navigation
+        include ../../partials/blog/modules/blog-comment
+    include ../../partials/sections/newletter-fullwidth
+    include ../../shared/footers/footer
+    include ../../shared/shop-filter
+
+

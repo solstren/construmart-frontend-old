@@ -1,0 +1,35 @@
+include ../../data/menu/menu
+include ../../data/menu/menu-product-categories
+header.header.header--organic(data-sticky="true")
+    .header__top
+        .container
+            .header__left
+                include modules/menu-dropdown
+                a(href='index.html').ps-logo: img(src="img/logo-organic.png" alt="")
+            .header__center
+                form(action="index.html" method="get" class="ps-form--quick-search")
+                    .form-group--icon
+                        i.icon-chevron-down
+                        select.form-control
+                            option(value="1") All
+                            option(value="1") Bags
+                            option(value="1") Shoes
+                            option(value="1") Men
+                            option(value="1") Women
+                            option(value="1") Sunglasses
+                    input.form-control(type="text" placeholder="I'm shopping for...")
+                    button Search
+            .header__right
+                include modules/header-actions
+    nav.navigation
+        .container
+            .navigation__left: include modules/menu-dropdown
+            .navigation__right
+                +createMenu(menu_1, 'menu menu--organic')
+                .ps-block--header-hotline.inline
+                    p
+                        i.icon-telephone
+                        | Hotline:
+                        strong  1-800-234-5678
+
+

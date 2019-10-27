@@ -1,0 +1,8 @@
+.ps-related-posts
+    h3 Related Posts
+    .row
+        each post, index in blogGrid
+            if index < 4
+                if post.type !== 'large'
+                    +column({cols: [4, 4, 4, 6, 12]})
+                        +blogStandard(post)

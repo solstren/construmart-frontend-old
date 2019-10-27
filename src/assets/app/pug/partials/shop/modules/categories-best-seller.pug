@@ -1,0 +1,27 @@
+.ps-product-list.ps-product-list--2
+    .ps-section__header
+        h3 Best Seller Items
+        ul.ps-section__links
+            li: a(href='shop-grid.html') Clothing & Apparel
+            li: a(href='shop-grid.html') Garden & Kitchen
+            li: a(href='shop-grid.html') Consumer Electrics
+    .ps-section__content
+        .ps-carousel--nav.owl-slider(
+        data-owl-auto= 'false',
+        data-owl-loop= 'false',
+        data-owl-speed= '10000',
+        data-owl-gap= '30',
+        data-owl-nav= 'false',
+        data-owl-dots= 'true',
+        data-owl-item= '5',
+        data-owl-item-xs= '2',
+        data-owl-item-sm= '2',
+        data-owl-item-md= '3',
+        data-owl-item-lg= '4',
+        data-owl-item-xl= '5',
+        data-owl-duration= '1000',
+        data-owl-mousedrag= 'on'
+        )
+            each product, index in shop_products
+                if index > 6
+                    +product(product)

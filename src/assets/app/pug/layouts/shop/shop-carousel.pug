@@ -1,0 +1,30 @@
+extends ../../master
+
+block data
+    include ../../utilties/product-mixins
+    include ../../data/shop/shop-data
+    include ../../data/shop/shop-sidebar-links
+    include ../../data/shop/shop-product-features
+    include ../../data/product/product-default
+
+block page_header
+    - var currentPage = 'shop'
+    include ../../shared/headers/header-1
+    include ../../shared/headers/header-mobile
+
+block page_content
+    .ps-breadcrumb
+        .container
+            ul.breadcrumb
+                li: a(href='index.html') Home
+                li Shop carousel
+    #shop-carousel.ps-page--shop
+        .container
+            include ../../partials/shop/modules/carousel-banner
+            include ../../partials/shop/modules/carousel-top-deal
+            include ../../partials/shop/modules/carousel-product-box
+    include ../../partials/sections/newsletter
+    include ../../shared/footers/footer
+    include ../../shared/shop-filter
+
+

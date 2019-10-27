@@ -1,0 +1,38 @@
+.ps-block--bought-toggether
+    h4 Frequently Bought Together
+    .ps-block__content
+        .ps-block__items
+            .ps-block__item
+                .ps-product.ps-product--simple
+                    .ps-product__thumbnail
+                        a(href='product-default.html'): img(src="img/products/furniture/12.jpg" alt="")
+                        ul.ps-product__actions
+                            li: a(href='#' data-toggle="tooltip" data-placement="top" title="Read More"): i.icon-bag2
+                            li: a(href='#' data-toggle="tooltip" data-placement="top" title="Quick View"): i.icon-eye
+                            li: a(href='#' data-toggle="tooltip" data-placement="top" title="Add to Whishlist"): i.icon-heart
+                            li: a(href='#' data-toggle="tooltip" data-placement="top" title="Compare"): i.icon-chart-bars
+                    .ps-product__container
+                        .ps-product__content(data-mh=height)
+                            a(href='product-default.html').ps-product__title Korea Long Sofa Fabric In Blue Navy Color
+                            p.ps-product__price $679.80
+            .ps-block__item
+                .ps-product.ps-product--simple
+                    .ps-product__thumbnail
+                        a(href='product-default.html'): img(src="img/products/furniture/13.jpg" alt="")
+                        ul.ps-product__actions
+                            li: a(href='#' data-toggle="tooltip" data-placement="top" title="Read More"): i.icon-bag2
+                            li: a(href='#' data-toggle="tooltip" data-placement="top" title="Quick View"): i.icon-eye
+                            li: a(href='#' data-toggle="tooltip" data-placement="top" title="Add to Whishlist"): i.icon-heart
+                            li: a(href='#' data-toggle="tooltip" data-placement="top" title="Compare"): i.icon-chart-bars
+                    .ps-product__container
+                        .ps-product__content(data-mh=height)
+                            a(href='product-default.html').ps-product__title Fabric Chair In Brown Color
+                            p.ps-product__price $120.80
+            .ps-block__item.ps-block__total
+                p Total Price:
+                    strong  $1000.30
+                a(href='#').ps-btn Add All to cart
+                a(href='#').ps-btn.ps-btn--gray.ps-btn--outline Add All to whishlist
+        .ps-block__footer
+            +checkbox('product-bought-1', 'product-bought', "<strong>This item: </strong> Korea Long Sofa Fabric In Blue Navy Color <span>$679.80</span>", '', 'checked')
+            +checkbox('product-bought-2', 'product-bought', "Fabric Chair In Brown Color <span>$120.80</span>", '', 'checked')

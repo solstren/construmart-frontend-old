@@ -1,0 +1,16 @@
+.ps-product-list.ps-new-arrivals
+    .ps-container
+        .ps-section__header
+            h3 Hot New Arrivals
+            ul.ps-section__links
+                li: a(href='shop-grid.html') Technologies
+                li: a(href='shop-grid.html') Electronic
+                li: a(href='shop-grid.html') Furnitures
+                li: a(href='shop-grid.html') Clothing & Apparel
+                li: a(href='shop-grid.html') Health & Beauty
+                li: a(href='shop-grid.html') View All
+        .ps-section__content
+            .row
+                each val in home_1_new_arrivals
+                    +column({cols: [3, 4, 4, 6, 12]})
+                        +product-horizontal(val)
