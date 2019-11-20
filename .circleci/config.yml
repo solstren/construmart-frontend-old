@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/node:10.15.0
+      - image: circleci/node:11.12.0
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -44,9 +44,9 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # Lint the Source Code
-      - run:
-          name: Linting Source Code...
-          command: yarn run lint
+      # - run:
+      #     name: Linting Source Code...
+      #     command: yarn run lint
 
       # Test the Source Code
       # - run:
