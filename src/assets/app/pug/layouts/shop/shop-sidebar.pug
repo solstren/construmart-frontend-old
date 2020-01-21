@@ -1,0 +1,28 @@
+extends ../../master
+
+block data
+    include ../../utilties/product-mixins
+    include ../../data/shop/shop-data
+    include ../../data/shop/shop-sidebar-links
+    include ../../data/shop/shop-product-features
+    include ../../data/product/product-default
+
+block page_header
+    - var currentPage = 'shop'
+    include ../../shared/headers/header-1
+    include ../../shared/headers/header-mobile
+
+block page_content
+    .ps-breadcrumb
+        .ps-container
+            ul.breadcrumb
+                li: a(href='index.html') Home
+                li Shop
+    #shop-sidebar.ps-page--shop
+        .container
+            include ../../partials/shop/layout/sidebar/shop-content
+    include ../../partials/sections/newsletter
+    include ../../shared/footers/footer
+    include ../../shared/shop-filter
+
+

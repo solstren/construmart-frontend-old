@@ -1,0 +1,28 @@
+extends ../../master
+
+block data
+    include ../../data/product/product-default
+
+block page_header
+    - var currentPage = 'homepage'
+    include ../../shared/headers/header-1
+    include ../../shared/headers/header-mobile
+
+block page_content
+    .ps-breadcrumb
+        .ps-container
+            ul.breadcrumb
+                li: a(href='index.html') Home
+                li: a(href='shop-default.html') Consumer Electrics
+                li: a(href='shop-default.html') Refrigerators
+                li Marshall Kilburn Portable Wireless Speaker
+    .ps-page--product.ps-page--product-box
+        .container
+            include ../../partials/product/product-box
+            include ../../partials/product/modules/customer-bought
+            include ../../partials/product/modules/related-product
+
+    include ../../partials/sections/newsletter
+    include ../../shared/footers/footer
+
+

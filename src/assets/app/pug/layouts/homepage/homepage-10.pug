@@ -1,0 +1,30 @@
+extends ../../master
+
+block data
+    include ../../utilties/product-mixins
+    include ../../data/home-10/home-data
+
+block append style
+    link(rel="stylesheet", href="css/technology.css")
+
+block page_header
+    - var currentPage = 'homepage'
+    include ../../shared/headers/header-technology
+    include ../../shared/headers/header-mobile
+
+block page_content
+    #homepage-10
+        - let layout = 'default';
+        include ../../partials/homepages/home-10/home-banner
+        include ../../partials/sections/site-features
+        include ../../partials/homepages/home-10/home-deal-of-day
+        include ../../partials/homepages/home-10/home-promotion
+        include ../../partials/homepages/home-10/home-top-categories
+        include ../../partials/homepages/home-10/home-smartphone
+        include ../../partials/homepages/home-10/home-laptop-and-sound
+        include ../../partials/homepages/home-10/home-technology-and-toy
+        include ../../partials/homepages/home-10/home-good-price
+        //-include ../../partials/homepages/home-10/home-recent-view
+        - let footer = 'default';
+        include ../../shared/footers/footer-technology
+

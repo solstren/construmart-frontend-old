@@ -1,0 +1,16 @@
+.ps-product-list
+    .container
+        .ps-section__header
+            h3 Good Price Accessories
+            ul.ps-section__links
+                li: a(href='shop-grid.html') HeadPhone
+                li: a(href='shop-grid.html') Charge
+                li: a(href='shop-grid.html') Case USB
+                li: a(href='shop-grid.html') Hard Drive
+                li: a(href='shop-grid.html') TV Box
+                li: a(href='shop-grid.html') View All
+        .ps-section__content
+            .row
+                each val in goodPrice
+                    +column({cols: [4, 4, 6, 6, 12]})
+                        +product-horizontal(val)

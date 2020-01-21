@@ -1,0 +1,18 @@
+.ps-our-team
+    .container
+        .ps-section__header: h3 Meet Our Leaders
+        .ps-section__content
+            - for (var i = 0; i < 7; i ++)
+                figure
+                    .ps-block--ourteam
+                        img(src="img/users/our-team/"+(i+1)+".jpg" alt="")
+                        .ps-block__content
+                            h4 Robert Downey Jr
+                            p CEO Fouder
+                            ul
+                                li: a(href='#'): i.fa.fa-twitter
+                                li: a(href='#'): i.fa.fa-facebook
+                                li: a(href='#'): i.fa.fa-linkedin
+            figure(data-mh='our-team')
+                .ps-block--ourteam.blank
+                    a(href='#') Become <br> member in  <br> team

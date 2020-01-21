@@ -1,0 +1,20 @@
+.ps-page__container
+    .ps-page__left
+        .ps-product--detail.ps-product--fullwidth
+            .ps-product__header
+                include thumbnail/countdown
+                include information/countdown
+            //-include ../../partials/product/modules/customer-bought
+            .ps-product__content.ps-tab-root
+                include modules/bought-together
+                ul(class="ps-tab-list")
+                    li.active: a(href="#tab-1") Description
+                    li: a(href="#tab-2") Specification
+                    li: a(href='#tab-3') Vendor
+                    li: a(href='#tab-4') Reviews (1)
+                    li: a(href='#tab-5') Questions and Answers
+                    li: a(href='#tab-6') More Offers
+                include modules/tab-contents
+    .ps-page__right
+        include modules/product-widget-right
+

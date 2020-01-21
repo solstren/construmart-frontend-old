@@ -1,0 +1,128 @@
+.ps-vendor-dashboard.pro
+    .container
+        .ps-section__header
+            h3 Vendor Dasboard Pro
+            p Designed base on WC Vendor Plugin. Martfury also fully comptatiable with other popular plugins as Dokan, YITH, etc .Can help you turns your site into multi-vendor eCommerce site.
+        .ps-section__content
+            ul.ps-section__links
+                li.active: a(href='#') Dashboard
+                li: a(href='#') Products
+                li: a(href='#') Order
+                li: a(href='#') Setting
+                li: a(href='#') View Store
+            form(action="index.html" method="get" class="ps-form--vendor-datetimepicker")
+                .row
+                    +column({cols: [3, 3, 4, 6, 12]})
+                        .input-group
+                            .input-group-prepend
+                                span.input-group-text#time-from From
+                            input.form-control.ps-datepicker(aria-label="Username" aria-describedby="time-from")
+                    +column({cols: [3, 3, 4, 6, 12]})
+                        .input-group
+                            .input-group-prepend
+                                span.input-group-text#time-form To
+                            input.form-control.ps-datepicker(aria-label="Username" aria-describedby="time-to")
+                    +column({cols: [3, 3, 4, 6, 12]})
+                        button.ps-btn
+                            i.icon-sync2
+                            |  Update
+            .row
+                +column({cols: [6, 6, 12, 12, 12]})
+                    figure.ps-block--vendor-status
+                        figcaption Commission Due
+                        table.table.ps-table.ps-table--vendor-status
+                            tbody
+                                tr
+                                    td Product
+                                    td $12.1010,444
+                                tr
+                                    td Shipping
+                                    td $00.000
+                                tr
+                                    td: strong Total
+                                    td $12.1010,444
+                +column({cols: [6, 6, 12, 12, 12]})
+                    figure.ps-block--vendor-status
+                        figcaption Commission Paid
+                        table.table.ps-table.ps-table--vendor-status
+                            tbody
+                                tr
+                                    td Product
+                                    td $12.1010,444
+                                tr
+                                    td Shipping
+                                    td $00.000
+                                tr
+                                    td: strong Total
+                                    td $12.1010,444
+                +column({cols: [6, 6, 12, 12, 12]})
+                    figure.ps-block--vendor-status
+                        figcaption Order Totals (25)
+                        canvas#line-chart
+                +column({cols: [6, 6, 12, 12, 12]})
+                    figure.ps-block--vendor-status
+                        figcaption Product Totals (3)
+                        canvas#pie-chart
+                +column({cols: [6, 6, 12, 12, 12]})
+                    figure.ps-block--vendor-status
+                        figcaption Recent Orders
+                        table.table.ps-table.ps-table--vendor
+                            thead
+                                tr
+                                    th Order ID
+                                    th Product
+                                    th Totals
+                            tbody
+                                tr
+                                    td
+                                        a(href='#') MS46891357
+                                        p Nov 4, 2017
+                                    td
+                                        a(href='#') 1 x Marshall Kilburn Portable...
+                                        p Shipping
+                                    td
+                                        p $295.47
+                                        p $0.00
+                                tr
+                                    td
+                                        a(href='#') MS46891357
+                                        p Nov 2, 2017
+                                    td
+                                        a(href='#') 1 x Unero Military Classical Ba...
+                                        p Shipping
+                                    td
+                                        p $45.39
+                                        p $0.00
+                        .ps-block__footer: a(href='#') View All Orders
+                +column({cols: [6, 6, 12, 12, 12]})
+                    figure.ps-block--vendor-status
+                        figcaption Recent Products
+                        table.table.ps-table.ps-table--vendor
+                            thead
+                                tr
+                                    th: i.icon-picture
+                                    th Product
+                                    th Status
+                            tbody
+                                tr
+                                    td: a(href='#'): img(src="img/products/electronic/1.jpg" alt="" width=50)
+                                    td
+                                        a(href='#') Marshall Kilburn Wireless...
+                                        p $295.47
+                                    td
+                                        p.ps-tag--in-stock In Stock
+                                        p Published: Oct 10, 2018
+                                tr
+                                    td: a(href='#'): img(src="img/products/electronic/2.jpg" alt="" width=50)
+                                    td
+                                        a(href='#') Marshall Kilburn Wireless...
+                                        p $295.47
+                                    td
+                                        p.ps-tag--in-stock In Stock
+                                        p Published: Oct 10, 2018
+
+                        .ps-block__footer: a(href='#') View All Orders
+
+
+
+

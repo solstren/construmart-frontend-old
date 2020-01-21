@@ -1,0 +1,52 @@
+.ps-section--shopping.ps-shopping-cart
+    .container
+        .ps-section__header: h1 Shopping Cart
+        .ps-section__content
+            include ../../partials/tables/table-shopping-cart
+            .ps-section__cart-actions
+                a(href='shop-default.html').ps-btn
+                    i.icon-arrow-left
+                    |  Back to Shop
+                a(href='shop-default.html').ps-btn.ps-btn--outline
+                    i.icon-sync
+                    |  Update cart
+
+        .ps-section__footer
+            .row
+                +column({cols: [4, 4, 12, 12, 12]})
+                    figure
+                        figcaption Coupon Discount
+                        .form-group
+                            input.form-control(type="text" placeholder="")
+                        .form-group
+                            button.ps-btn.ps-btn--outline Apply
+                +column({cols: [4, 4, 12, 12, 12]})
+                    figure
+                        figcaption Calculate shipping
+                        .form-group
+                            select.ps-select
+                                option(value=1) America
+                                option(value=2) Italia
+                                option(value=3) Vietnam
+                        .form-group: input.form-control(type="text" placeholder="Town/City")
+                        .form-group: input.form-control(type="text" placeholder="Postcode/Zip")
+                        .form-group
+                            button.ps-btn.ps-btn--outline Update
+                +column({cols: [4, 4, 12, 12, 12]})
+                    .ps-block--shopping-total
+                        .ps-block__header
+                            p Subtotal <span> $683.49</span>
+                        .ps-block__content
+                            ul.ps-block__product
+                                li
+                                    span.ps-block__shop YOUNG SHOP Shipping
+                                    span.ps-block__shipping Free Shipping
+                                    span.ps-block__estimate Estimate for <strong>Viet Nam</strong>
+                                        a(href='#')  MVMTH Classical Leather Watch In Black ×1
+                                li
+                                    span.ps-block__shop ROBERT’S STORE Shipping
+                                    span.ps-block__shipping Free Shipping
+                                    span.ps-block__estimate Estimate for <strong>Viet Nam</strong>
+                                        a(href='#') Apple Macbook Retina Display 12” ×1
+                            h3 Total <span>$683.49</span>
+                    a(href='checkout.html').ps-btn.ps-btn--fullwidth Proceed to checkout

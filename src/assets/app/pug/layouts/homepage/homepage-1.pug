@@ -1,0 +1,29 @@
+extends ../../master
+
+block data
+    include ../../utilties/product-mixins
+    include ../../data/home-1/home-products
+
+block page_header
+    - var currentPage = 'homepage'
+    include ../../shared/headers/header-1
+    include ../../shared/headers/header-mobile
+
+block page_content
+    #homepage-1
+        include ../../partials/homepages/home-1/home-banner
+        include ../../partials/sections/site-features
+        include ../../partials/homepages/home-1/deal-of-day
+        include ../../partials/homepages/home-1/home-ads-2
+        include ../../partials/sections/top-categories
+        include ../../partials/homepages/home-1/electronic
+        include ../../partials/homepages/home-1/clothings
+        include ../../partials/homepages/home-1/garden-kitchen
+        include ../../partials/homepages/home-1/home-ads
+        - let appLayout = 'fullwidth';
+        include ../../partials/sections/download-app
+        include ../../partials/homepages/home-1/hot-new-arrivals
+        include ../../partials/sections/newletter-fullwidth
+    include ../../shared/footers/footer
+    include ../../partials/modules/subscribe-popup
+

@@ -1,0 +1,74 @@
+include ../../data/menu/menu
+include ../../data/menu/menu-product-categories
+header.header.header--furniture(data-sticky="true")
+    .header__top
+        .container
+            .header__left
+                a(href='index.html').ps-logo: img(src="img/logo-furniture.png" alt="")
+                include modules/menu-dropdown
+            .header__center
+                form(action="index.html" method="get" class="ps-form--quick-search")
+                    .form-group--icon
+                        i.icon-chevron-down
+                        select.form-control
+                            option(value="1") All
+                            option(value="1") Bags
+                            option(value="1") Shoes
+                            option(value="1") Men
+                            option(value="1") Women
+                            option(value="1") Sunglasses
+                    input.form-control(type="text" placeholder="I'm shopping for...")
+                    button Search
+            .header__right
+                .header__actions
+                    a(href='#').header__extra
+                        i.icon-heart
+                        span: i 0
+                    .ps-cart--mini
+                        a(href='#').header__extra
+                            i.icon-bag2
+                            span: i 0
+                        include modules/mini-cart
+                    .ps-block--user-header
+                        .ps-block__left: i.icon-user
+                        .ps-block__right
+                            a(href='my-account.html') Login
+                            a(href='my-account.html') Register
+    nav.navigation
+        .container
+            .navigation__left: +createMenu(menu_1, 'menu menu--furniture')
+            .navigation__right
+                ul.navigation__extra
+                    li: a(href='#') Sell on Martfury
+                    li: a(href='#') Tract your order
+                    li
+                        .ps-dropdown
+                            a(href='#') US Dollar
+                            ul.ps-dropdown-menu
+                                li: a(href='#') Us Dollar
+                                li: a(href='#') Euro
+                    li
+                        .ps-dropdown.language
+                            a(href='#')
+                                img(src="img/flag/en.png" alt="")
+                                | English
+                            ul.ps-dropdown-menu
+                                li: a(href='#')
+                                    img(src="img/flag/germany.png" alt="")
+                                    |  Germany
+                                li: a(href='#')
+                                    img(src="img/flag/fr.png" alt="")
+                                    |  France
+
+
+
+
+
+
+
+
+
+
+
+
+

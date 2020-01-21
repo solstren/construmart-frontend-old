@@ -1,0 +1,17 @@
+.ps-top-categories
+    .container
+        .ps-section__header
+            h3 TOP CATEGORIES OF THE MONTH
+        .ps-section__content
+        .row.align-content-lg-stretch
+            each category in home_2_categories
+                +column({cols: [4, 4, 4, 6, 12]})
+                    .ps-block--category-2.ps-block--category-auto-part(data-mh="categories")
+                        .ps-block__thumbnail: img(src=category.thumbnail alt="")
+                        .ps-block__content
+                            h4 #{category.title}
+                            ul
+                                each link in category.links
+                                    li: a(href='shop-default.html') #{link}
+                                li.more: a(href='#') More
+                                    i.icon-chevron-right

@@ -1,0 +1,28 @@
+.ps-product-list.ps-clothings
+    .container
+        .ps-section__header
+            h3 Consumer Electronics
+            ul.ps-section__links
+                li: a(href='shop-grid.html') New Arrivals
+                li: a(href='shop-grid.html') Best seller
+                li: a(href='shop-grid.html') Must Popular
+                li: a(href='shop-grid.html') View All
+        .ps-section__content
+            .ps-carousel--nav.owl-slider(
+            data-owl-auto= 'false',
+            data-owl-loop= 'false',
+            data-owl-speed= '10000',
+            data-owl-gap= '30',
+            data-owl-nav= 'true',
+            data-owl-dots= 'true',
+            data-owl-item= '5',
+            data-owl-item-xs= '2',
+            data-owl-item-sm= '2',
+            data-owl-item-md= '3',
+            data-owl-item-lg= '4',
+            data-owl-item-xl= '5',
+            data-owl-duration= '1000',
+            data-owl-mousedrag= 'on'
+            )
+                each product in home_3_electronic
+                    +product(product)

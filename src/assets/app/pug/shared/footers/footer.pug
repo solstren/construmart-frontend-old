@@ -1,0 +1,31 @@
+include ../../data/footer/data-footer
+footer.ps-footer
+    if footer === 'default'
+        .container
+            include modules/footer-widgets
+            include modules/footer-links
+            .ps-footer__copyright
+                p © 2018 Martfury. All Rights Reserved
+                p
+                    span We Using Safe Payment For:
+                    a(href='#'): img(src="img/payment-method/1.jpg" alt="")
+                    a(href='#'): img(src="img/payment-method/2.jpg" alt="")
+                    a(href='#'): img(src="img/payment-method/3.jpg" alt="")
+                    a(href='#'): img(src="img/payment-method/4.jpg" alt="")
+                    a(href='#'): img(src="img/payment-method/5.jpg" alt="")
+    else
+        .ps-container
+            include modules/footer-widgets
+            include modules/footer-links
+            .ps-footer__copyright
+                p © 2018 Martfury. All Rights Reserved
+                p
+                    span We Using Safe Payment For:
+                    a(href='#'): img(src="img/payment-method/1.jpg" alt="")
+                    a(href='#'): img(src="img/payment-method/2.jpg" alt="")
+                    a(href='#'): img(src="img/payment-method/3.jpg" alt="")
+                    a(href='#'): img(src="img/payment-method/4.jpg" alt="")
+                    a(href='#'): img(src="img/payment-method/5.jpg" alt="")
+
+
+

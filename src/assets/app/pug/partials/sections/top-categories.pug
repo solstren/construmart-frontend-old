@@ -1,0 +1,52 @@
+if layout === 'default'
+    .ps-top-categories
+        .container
+            h3 Top categories of the month
+            .row
+                - for (var i = 0; i < 6; i ++)
+                    +column({cols: [2, 3, 4, 4, 6]})
+                        .ps-block--category
+                            a(href='shop-default.html').ps-block__overlay
+                            img(src="img/categories/" + (i + 1) + ".jpg" alt="")
+                            if i == 0
+                                p Electronics
+                            else if i == 1
+                                p Clothings
+                            else if i == 2
+                                p Computers
+                            else if i == 3
+                                p Home & Kitchen
+                            else if i == 4
+                                p Health & Beauty
+                            else if i == 5
+                                p Health & Beauty
+                            else
+                                p Jewelry & Watch
+else
+    .ps-top-categories
+        .ps-container
+            h3 Top categories of the month
+            .row
+                - for (var i = 0; i < 8; i ++)
+                    +column({cols: [2, 3, 4, 4, 6]})
+                        .ps-block--category
+                            a(href='shop-default.html').ps-block__overlay
+                            img(src="img/categories/" + (i + 1) + ".jpg" alt="")
+                            if i == 0
+                                p Electronics
+                            else if i == 1
+                                p Clothings
+                            else if i == 2
+                                p Computers
+                            else if i == 3
+                                p Home & Kitchen
+                            else if i == 4
+                                p Health & Beauty
+                            else if i == 5
+                                p Health & Beauty
+                            else if i == 6
+                                p Jewelry & Watch
+                            else if i == 7
+                                p Technology Toys
+                            else
+                                p Smartphone

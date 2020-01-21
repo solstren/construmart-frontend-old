@@ -1,0 +1,31 @@
+extends ../../master
+
+block data
+    include ../../utilties/product-mixins
+    include ../../data/home-9/home-data
+    include ../../data/home-3/home-2/home-2-products
+
+block append style
+    link(rel="stylesheet", href="css/organic.css")
+
+block page_header
+
+    - var currentPage = 'homepage'
+    include ../../shared/headers/header-organic
+    include ../../shared/headers/header-mobile
+
+block page_content
+    #homepage-9
+        - let layout = 'default';
+        include ../../partials/homepages/home-9/home-banner
+        include ../../partials/sections/site-features
+        include ../../partials/homepages/home-9/home-top-categories
+        include ../../partials/homepages/home-9/home-promotion
+        include ../../partials/homepages/home-9/home-deal-hot
+        include ../../partials/homepages/home-9/home-new-arrivals
+        include ../../partials/homepages/home-9/home-testimonial
+        include ../../partials/homepages/home-9/home-blog
+
+        - let footer = 'default';
+        include ../../shared/footers/footer-organic
+

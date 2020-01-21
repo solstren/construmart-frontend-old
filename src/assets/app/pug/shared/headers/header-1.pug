@@ -1,0 +1,127 @@
+include ../../data/menu/menu
+include ../../data/menu/menu-product-categories
+header.header.header--1(data-sticky="true")
+    .header__top
+        .ps-container
+            .header__left
+                include modules/menu-dropdown
+                a(href='index.html').ps-logo: img(src="img/logo_light.png" alt="")
+            .header__center
+                form(action="index.html" method="get" class="ps-form--quick-search")
+                    .form-group--icon
+                        i.icon-chevron-down
+                        select.form-control
+                            option(value='0', selected='selected') All
+                            option.level-0(value='babies-moms') Babies & Moms
+                            option.level-0(value='books-office') Books & Office
+                            option.level-0(value='cars-motocycles') Cars & Motocycles
+                            option.level-0(value='clothing-apparel') Clothing & Apparel
+                            option.level-1(value='accessories-clothing-apparel')    Accessories
+                            option.level-1(value='bags')    Bags
+                            option.level-1(value='kids-fashion')    Kid’s Fashion
+                            option.level-1(value='mens')    Mens
+                            option.level-1(value='shoes')    Shoes
+                            option.level-1(value='sunglasses')    Sunglasses
+                            option.level-1(value='womens')    Womens
+                            option.level-0(value='computers-technologies') Computers & Technologies
+                            option.level-1(value='desktop-pc')    Desktop PC
+                            option.level-1(value='laptop')    Laptop
+                            option.level-1(value='smartphones')    Smartphones
+                            option.level-0(value='consumer-electrics') Consumer Electrics
+                            option.level-1(value='air-conditioners')    Air Conditioners
+                            option.level-2(value='accessories')       Accessories
+                            option.level-2(value='type-hanging-cell')       Type Hanging Cell
+                            option.level-2(value='type-hanging-wall')       Type Hanging Wall
+                            option.level-1(value='audios-theaters')    Audios & Theaters
+                            option.level-2(value='headphone')       Headphone
+                            option.level-2(value='home-theater-system')       Home Theater System
+                            option.level-2(value='speakers')       Speakers
+                            option.level-1(value='car-electronics')    Car Electronics
+                            option.level-2(value='audio-video')       Audio & Video
+                            option.level-2(value='car-security')       Car Security
+                            option.level-2(value='radar-detector')       Radar Detector
+                            option.level-2(value='vehicle-gps')       Vehicle GPS
+                            option.level-1(value='office-electronics')    Office Electronics
+                            option.level-2(value='printers')       Printers
+                            option.level-2(value='projectors')       Projectors
+                            option.level-2(value='scanners')       Scanners
+                            option.level-2(value='store-business')       Store & Business
+                            option.level-1(value='refrigerators')    Refrigerators
+                            option.level-1(value='tv-televisions')    TV Televisions
+                            option.level-2(value='4k-ultra-hd-tvs')       4K Ultra HD TVs
+                            option.level-2(value='led-tvs')       LED TVs
+                            option.level-2(value='oled-tvs')       OLED TVs
+                            option.level-1(value='washing-machines')    Washing Machines
+                            option.level-2(value='type-drying-clothes')       Type Drying Clothes
+                            option.level-2(value='type-horizontal')       Type Horizontal
+                            option.level-2(value='type-vertical')       Type Vertical
+                            option.level-0(value='garden-kitchen') Garden & Kitchen
+                            option.level-1(value='cookware')    Cookware
+                            option.level-1(value='decoration')    Decoration
+                            option.level-1(value='furniture')    Furniture
+                            option.level-1(value='garden-tools')    Garden Tools
+                            option.level-1(value='home-improvement')    Home Improvement
+                            option.level-1(value='powers-and-hand-tools')    Powers And Hand Tools
+                            option.level-1(value='utensil-gadget')    Utensil & Gadget
+                            option.level-0(value='health-beauty') Health & Beauty
+                            option.level-1(value='equipments')    Equipments
+                            option.level-1(value='hair-care')    Hair Care
+                            option.level-1(value='perfumer')    Perfumer
+                            option.level-1(value='skin-care')    Skin Care
+                            option.level-0(value='jewelry-watches') Jewelry & Watches
+                            option.level-1(value='gemstone-jewelry')    Gemstone Jewelry
+                            option.level-1(value='mens-watches')    Men’s Watches
+                            option.level-1(value='womens-watches')    Women’s Watches
+                            option.level-0(value='phones-accessories') Phones & Accessories
+                            option.level-1(value='iphone-8')    Iphone 8
+                            option.level-1(value='iphone-x')    Iphone X
+                            option.level-1(value='sam-sung-note-8')    Sam Sung Note 8
+                            option.level-1(value='sam-sung-s8')    Sam Sung S8
+                            option.level-0(value='sport-outdoor') Sport & Outdoor
+                            option.level-1(value='freezer-burn')    Freezer Burn
+                            option.level-1(value='fridge-cooler')    Fridge Cooler
+                            option.level-1(value='wine-cabinets')    Wine Cabinets
+
+                    input.form-control(type="text" placeholder="I'm shopping for...")
+                    button Search
+            .header__right
+                include modules/header-actions
+    nav.navigation
+        .ps-container
+            .navigation__left: include modules/menu-dropdown
+            .navigation__right
+                +createMenu(menu_1, 'menu')
+                ul.navigation__extra
+                    li: a(href='#') Sell on Martfury
+                    li: a(href='#') Tract your order
+                    li
+                        .ps-dropdown
+                            a(href='#') US Dollar
+                            ul.ps-dropdown-menu
+                                li: a(href='#') Us Dollar
+                                li: a(href='#') Euro
+                    li
+                        .ps-dropdown.language
+                            a(href='#')
+                                img(src="img/flag/en.png" alt="")
+                                | English
+                            ul.ps-dropdown-menu
+                                li: a(href='#')
+                                    img(src="img/flag/germany.png" alt="")
+                                    |  Germany
+                                li: a(href='#')
+                                    img(src="img/flag/fr.png" alt="")
+                                    |  France
+
+
+
+
+
+
+
+
+
+
+
+
+

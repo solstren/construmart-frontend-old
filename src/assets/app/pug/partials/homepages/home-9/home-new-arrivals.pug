@@ -1,0 +1,15 @@
+.ps-product-list.ps-product-list--2
+    .container
+        .ps-section__header
+            h3 New Arrivals
+            ul.ps-section__links
+                li: a(href='shop-grid.html') Milks & Creams
+                li: a(href='shop-grid.html') Fruits
+                li: a(href='shop-grid.html') Vegetables
+                li: a(href='shop-grid.html') Ocean Foods
+                li: a(href='shop-grid.html') Fresh Meats
+                li: a(href='shop-grid.html') View All
+        .ps-section__content
+            .row
+               each product in organicProduct
+                   +column({cols: [3, 3, 4, 6, 12]}): +product-without-vendor(product)

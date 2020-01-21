@@ -1,0 +1,13 @@
+.ps-top-categories
+    .container
+        h3 Top categories of the month
+        .row
+            each category in homeCategories
+                 +column({cols: [4, 4, 4, 6, 12]})
+                    .ps-block--category-2(data-mh="categories")
+                        .ps-block__thumbnail: img(src=category.thumbnail alt="")
+                        .ps-block__content
+                            h4 #{category.title}
+                            ul
+                                each link in category.links
+                                    li: a(href='shop-default.html') #{link}

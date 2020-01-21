@@ -1,0 +1,324 @@
+mixin makeMenu(dataList, classList)
+    ul(class= classList)
+        each item in dataList
+            if (item.subMenu)
+                li(class=(currentPage == item.current) ? 'current-menu-item ' + item.extraClass : item.extraClass )
+                    if item.icon
+                        a(href=item.url)
+                            i(class=item.icon)
+                            |  #{item.text}
+                    else
+                        a(href=item.url) #{item.text}
+                    span.sub-toggle: i.fa.fa-angle-down
+                    +makeMenu(item.subMenu, item.subClass)
+            else if (item.megaContent)
+                li(class=(currentPage == item.current) ? 'current-menu-item ' + item.extraClass : item.extraClass )
+                    if item.icon
+                        a(href=item.url)
+                            i(class=item.icon)
+                            |  #{item.text}
+                    else
+                        a(href=item.url) #{item.text}
+                    .mega-menu
+                        each val in item.megaContent
+                            .mega-menu__column
+                                h4 #{val.heading}
+                                    span.sub-toggle
+                                +createMenu(val.megaItems, 'mega-menu__list')
+            else
+                li(class=(currentPage == item.current) ? 'current-menu-item ' : item.extraClass )
+                    if item.icon
+                        a(href=item.url)
+                            i(class=item.icon)
+                            |  #{item.text}
+                    else
+                        a(href=item.url) #{item.text}
+
+mixin createMenu(dataList, classList)
+    ul(class= classList)
+        each item in dataList
+            if (item.subMenu)
+                li(class=(currentPage == item.current) ? 'current-menu-item ' + item.extraClass : item.extraClass )
+                    if item.badge
+                        a(href=item.url class=((item.badge == 'sale') ? 'has-badge sale' : 'has-badge')) #{item.text}
+                    else
+                        a(href=item.url) #{item.text}
+                    span.sub-toggle
+                    +makeMenu(item.subMenu, item.subClass)
+            else if (item.megaContent)
+                li(class=(currentPage == item.current) ? 'current-menu-item ' + item.extraClass : item.extraClass )
+                    if item.badge
+                        a(href=item.url class=((item.badge == 'sale') ? 'has-badge sale' : 'has-badge')) #{item.text}
+                    else
+                        a(href=item.url) #{item.text}
+                    span.sub-toggle
+                    .mega-menu
+                        each val in item.megaContent
+                            .mega-menu__column
+                                h4 #{val.heading}
+                                    span.sub-toggle
+                                +createMenu(val.megaItems, 'mega-menu__list')
+            else
+                li(class=(currentPage == item.current) ? 'current-menu-item ' : item.extraClass)
+                    if item.badge
+                        a(href=item.url class=((item.badge == 'sale') ? 'has-badge sale' : 'has-badge')) #{item.text}
+                    else
+                        a(href=item.url) #{item.text}
+
+mixin column(args)
+    if (args)
+        - var cols = args.cols
+        if (Array.isArray(cols))
+            - var xl = typeof cols[0] != 'undefined' ? 'col-xl-'+ cols[0] : ''
+            - lg = typeof cols[1] != 'undefined' ? 'col-lg-'+ cols[1] : ''
+            - md = typeof cols[2] != 'undefined' ? 'col-md-'+ cols[2] : ''
+            - sm = typeof cols[3] != 'undefined' ? 'col-sm-'+ cols[3] : ''
+            - xs = typeof cols[4] != 'undefined' ? 'col-'+ cols[4] : ''
+            - column = xl+' '+lg +' '+ md+' ' + sm+' ' + xs;
+        else
+            - var column = typeof cols != 'undefined' ? 'col-xs-'+ cols : ''
+        - var offsets = args.offsets
+        if (Array.isArray(offsets))
+            - var xlOffset = typeof offsets[0] != 'undefined' ? 'col-xl-offset-'+ offsets[0] : ''
+            - lgOffset = typeof offsets[0] != 'undefined' ? 'col-lg-offset-'+ offsets[0] : ''
+            - mdOffset = typeof offsets[1] != 'undefined' ? 'col-md-offset-'+ offsets[1] : ''
+            - smOffset = typeof offsets[2] != 'undefined' ? 'col-sm-offset-'+ offsets[2] : ''
+            - xsOffset = typeof offsets[3] != 'undefined' ? 'col-xs-offset-'+ offsets[3] : ''
+            - columnOffset = xlOffset + ' '+ lgOffset+' ' + mdOffset+' ' + smOffset+' ' + xsOffset;
+        else
+            - var columnOffset = ''
+        div(class=(column + ' ' + columnOffset))
+            block
+    else
+        .col-xs-12
+            block
+
+mixin rating(readOnly)
+    if (readOnly == true)
+        select.ps-rating(data-read-only='true')
+            option(value='1') 1
+            option(value='1') 2
+            option(value='1') 3
+            option(value='1') 4
+            option(value='2') 5
+    else
+        select.ps-rating(data-read-only='false')
+            option(value='0') 0
+            option(value='1') 1
+            option(value='2') 2
+            option(value='3') 3
+            option(value='4') 4
+            option(value='5') 5
+
+mixin select(option, title)
+    select.ps-select(title=title)
+        - for (var i = 0; i < option; i ++)
+        option(value=i + 1) Option #{i + 1}
+
+mixin checkbox(id, name, text, extraClass, checked)
+    .ps-checkbox(class=extraClass)
+        if checked != ''
+            input.form-control(type="checkbox" id=id name=name checked)
+        else
+            input.form-control(type="checkbox" id=id name=name)
+        label(for=id) !{text}
+
+mixin radio(id, name, text, extraClass, checked)
+    .ps-radio(class=extraClass)
+        if checked != ''
+            input.form-control(type="radio" id=id name=name)
+        else
+            input.form-control(type="radio" id=id name=name)
+        if (text)
+            label(for=id) !{text}
+        else
+            label(for=id)
+
+mixin pagination(extraClass)
+    .ps-pagination(class=(extraClass) ? extraClass : '')
+        ul.pagination
+            li.active: a(href="#") 1
+            li: a(href="#") 2
+            li: a(href="#") 3
+            li: a(href="#") Next Page
+                i.icon-chevron-right
+
+mixin product-horizontal(val)
+    .ps-product--horizontal
+        .ps-product__thumbnail
+            a(href='product-default.html'): img(src=val.thumbnail alt="")
+        .ps-product__content
+            a(href='product-default.html').ps-product__title #{val.title}
+            if val.rating === true
+                .ps-product__rating
+                    +rating(true)
+                    span #{val.ratingCount}
+            p.ps-product__price(class=(val.sale === true) ? 'sale' : '') !{val.price}
+
+mixin product(val)
+    .ps-product
+        .ps-product__thumbnail
+            a(href='product-default.html'): img(src=val.thumbnail alt="")
+            if val.badge
+                each badge in val.badge
+                    if badge.type == 'sale'
+                        .ps-product__badge #{badge.value}
+                    if badge.type == 'outStock'
+                        .ps-product__badge.out-stock #{badge.value}
+                    if badge.type == 'hot'
+                        .ps-product__badge.hot #{badge.value}
+            ul.ps-product__actions
+                li: a(href='#' data-toggle="tooltip" data-placement="top" title="Read More"): i.icon-bag2
+                li: a(href='#' data-toggle="tooltip" data-placement="top" title="Quick View"): i.icon-eye
+                li: a(href='#' data-toggle="tooltip" data-placement="top" title="Add to Whishlist"): i.icon-heart
+                li: a(href='#' data-toggle="tooltip" data-placement="top" title="Compare"): i.icon-chart-bars
+        .ps-product__container
+            a(href='#').ps-product__vendor #{val.vendor}
+            .ps-product__content
+                a(href='product-default.html').ps-product__title #{val.title}
+                if val.rating === true
+                    .ps-product__rating
+                        +rating(true)
+                        span #{val.ratingCount}
+                p.ps-product__price(class=(val.sale === true) ? 'sale' : '') !{val.price}
+            .ps-product__content.hover
+                a(href='product-default.html').ps-product__title #{val.title}
+                p.ps-product__price(class=(val.sale === true) ? 'sale' : '') !{val.price}
+mixin product-without-vendor(val)
+    .ps-product
+        .ps-product__thumbnail
+            a(href='product-default.html'): img(src=val.thumbnail alt="")
+            if val.badge
+                each badge in val.badge
+                    if badge.type == 'sale'
+                        .ps-product__badge #{badge.value}
+                    if badge.type == 'outStock'
+                        .ps-product__badge.out-stock #{badge.value}
+                    if badge.type == 'hot'
+                        .ps-product__badge.hot #{badge.value}
+            ul.ps-product__actions
+                li: a(href='#' data-toggle="tooltip" data-placement="top" title="Read More"): i.icon-bag2
+                li: a(href='#' data-toggle="tooltip" data-placement="top" title="Quick View"): i.icon-eye
+                li: a(href='#' data-toggle="tooltip" data-placement="top" title="Add to Whishlist"): i.icon-heart
+                li: a(href='#' data-toggle="tooltip" data-placement="top" title="Compare"): i.icon-chart-bars
+        .ps-product__container
+            .ps-product__content
+                a(href='product-default.html').ps-product__title #{val.title}
+                if val.rating === true
+                    .ps-product__rating
+                        +rating(true)
+                        span #{val.ratingCount}
+                p.ps-product__price(class=(val.sale === true) ? 'sale' : '') !{val.price}
+            .ps-product__content.hover
+                a(href='product-default.html').ps-product__title #{val.title}
+                p.ps-product__price(class=(val.sale === true) ? 'sale' : '') !{val.price}
+
+mixin product-inner(val)
+    .ps-product.ps-product--inner
+        .ps-product__thumbnail
+            a(href='product-default.html'): img(src=val.thumbnail alt="")
+            if val.badge
+                each badge in val.badge
+                    if badge.type == 'sale'
+                        .ps-product__badge #{badge.value}
+                    if badge.type == 'outStock'
+                        .ps-product__badge.out-stock #{badge.value}
+                    if badge.type == 'hot'
+                        .ps-product__badge.hot #{badge.value}
+            ul.ps-product__actions
+                li: a(href='#' data-toggle="tooltip" data-placement="top" title="Read More"): i.icon-bag2
+                li: a(href='#' data-toggle="tooltip" data-placement="top" title="Quick View"): i.icon-eye
+                li: a(href='#' data-toggle="tooltip" data-placement="top" title="Add to Whishlist"): i.icon-heart
+                li: a(href='#' data-toggle="tooltip" data-placement="top" title="Compare"): i.icon-chart-bars
+        .ps-product__container
+            a(href='#').ps-product__vendor #{val.vendor}
+            .ps-product__content
+                a(href='product-default.html').ps-product__title #{val.title}
+                if val.rating === true
+                    .ps-product__rating
+                        +rating(true)
+                        span #{val.ratingCount}
+                p.ps-product__price(class=(val.sale === true) ? 'sale' : '') !{val.price}
+                .ps-product__progress-bar.ps-progress(data-value=Math.round(Math.random() * 100))
+                    .ps-progress__value: span
+                    p Sold:
+                        | #{Math.round(Math.random() * 100)}
+
+mixin product-wide(val)
+    .ps-product.ps-product--wide
+        .ps-product__thumbnail
+            a(href='product-default.html'): img(src=val.thumbnail alt="")
+            if val.badge
+                each badge in val.badge
+                    if badge.type == 'sale'
+                        .ps-product__badge #{badge.value}
+                    if badge.type == 'outStock'
+                        .ps-product__badge.out-stock #{badge.value}
+        .ps-product__container
+            .ps-product__content
+                a(href='product-default.html').ps-product__title #{val.title}
+                if val.rating === true
+                    .ps-product__rating
+                        +rating(true)
+                        span #{val.ratingCount}
+                p.ps-product__vendor Sold by:
+                    a(href='#') #{val.vendor}
+                ul.ps-product__desc
+                    li  Unrestrained and portable active stereo speaker
+                    li  Free from the confines of wires and chords
+                    li  20 hours of portable capabilities
+                    li  Double-ended Coil Cord with 3.5mm Stereo Plugs Included
+                    li  3/4″ Dome Tweeters: 2X and 4″ Woofer: 1X
+            .ps-product__shopping
+                p.ps-product__price(class=(val.sale === true) ? 'sale' : '') !{val.price}
+                a(href='#').ps-btn Add to cart
+                ul.ps-product__actions
+                    li: a(href='#')
+                        i.icon-heart
+                        |  Add to Wishlish
+                    li: a(href='#')
+                        i.icon-chart-bars
+                        |  Compare
+
+mixin product-simple(val, height)
+    .ps-product.ps-product--simple
+        .ps-product__thumbnail
+            a(href='product-default.html'): img(src=val.thumbnail alt="")
+            if val.badge
+                each badge in val.badge
+                    if badge.type == 'sale'
+                        .ps-product__badge #{badge.value}
+                    if badge.type == 'outStock'
+                        .ps-product__badge.out-stock #{badge.value}
+                    if badge.type == 'hot'
+                        .ps-product__badge.hot #{badge.value}
+            ul.ps-product__actions
+                li: a(href='#' data-toggle="tooltip" data-placement="top" title="Read More"): i.icon-bag2
+                li: a(href='#' data-toggle="tooltip" data-placement="top" title="Quick View"): i.icon-eye
+                li: a(href='#' data-toggle="tooltip" data-placement="top" title="Add to Whishlist"): i.icon-heart
+                li: a(href='#' data-toggle="tooltip" data-placement="top" title="Compare"): i.icon-chart-bars
+        .ps-product__container
+            .ps-product__content(data-mh=height)
+                a(href='product-default.html').ps-product__title #{val.title}
+                if val.rating === true
+                    .ps-product__rating
+                        +rating(true)
+                        span #{val.ratingCount}
+                p.ps-product__price(class=(val.sale === true) ? 'sale' : '') !{val.price}
+
+mixin blogStandard(post, extrClass)
+    .ps-post(class=extraClass)
+        .ps-post__thumbnail
+            a(href='blog-detail.html').ps-post__overlay
+            img(src=post.imagePath alt="")
+            if post.badge
+                .ps-post__badge: i(class=post.badge)
+        .ps-post__content
+            .ps-post__top
+                .ps-post__meta
+                    each category in post.categories
+                        a(href='#') #{category}
+                a(href='#').ps-post__title #{post.title}
+            .ps-post__bottom
+                p December 17, 2017 by
+                    a(href='#')  drfurion

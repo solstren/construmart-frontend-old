@@ -1,0 +1,38 @@
+.ps-block--products-of-category
+    .ps-block__categories
+        h3 Consumer Electronics
+        ul
+            li: a(href='shop-default.html') Best Seller
+            li: a(href='shop-default.html') New Arrivals
+            li: a(href='shop-default.html') TV Television
+            li: a(href='shop-default.html') Air Condition
+            li: a(href='shop-default.html') Washing Machine
+            li: a(href='shop-default.html') Microwave
+            li: a(href='shop-default.html') Refrigerator
+            li: a(href='shop-default.html') Office Electronic
+            li: a(href='shop-default.html') Car Electronic
+            li: a(href='shop-default.html') Sales & Deals
+        a(href='#').ps-block__more-link View All
+    .ps-block__slider
+        .ps-carousel--product-box.owl-slider(
+        data-owl-auto= 'true',
+        data-owl-loop= 'true',
+        data-owl-speed= '7000',
+        data-owl-gap= '0',
+        data-owl-nav= 'true',
+        data-owl-dots= 'true',
+        data-owl-item= '1',
+        data-owl-item-xs= '1',
+        data-owl-item-sm= '1',
+        data-owl-item-md= '1',
+        data-owl-item-lg= '1',
+        data-owl-duration= '500',
+        data-owl-mousedrag= 'off'
+        )
+            a(href='#'): img(src="img/slider/home-3/electronic-1.jpg" alt="")
+            a(href='#'): img(src="img/slider/home-3/electronic-2.jpg" alt="")
+            a(href='#'): img(src="img/slider/home-3/electronic-3.jpg" alt="")
+    .ps-block__product-box
+        each product, index in home_3_electronic
+            if index < 6
+                +product-simple(product, 'technology')
