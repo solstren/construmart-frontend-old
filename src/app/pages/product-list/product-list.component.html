@@ -150,7 +150,9 @@
                 <div *ngFor="let product of products" class="col-xl-2 col-lg-4 col-md-4 col-sm-6 col-6 ">
                   <div class="ps-product">
                     <div class="ps-product__thumbnail">
-                      <a routerLink="product/{{product.id}}"><img src="{{product.imageName ? baseUrl + product.imageName : 'assets/img/products/shop/1.jpg' }}" alt=""/></a>
+                      <a routerLink="product/{{product.id}}">
+                        <img style="height: 110px; width: 100%;" src="{{product.imageName ? baseUrl + 'uploads/' + product.imageName : 'assets/img/products/shop/1.jpg' }}" alt=""/>
+                      </a>
                       <ul class="ps-product__actions">
                         <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
                         <li><a href="#" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a></li>
