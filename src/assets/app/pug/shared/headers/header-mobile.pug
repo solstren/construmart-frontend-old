@@ -1,0 +1,52 @@
+include ../../data/menu/menu-product-categories
+
+header.header.header--mobile(data-sticky='true')
+    .header__top
+        .header__left
+            p Welcome to Martfury Online Shopping Store !
+        .header__right
+            ul.navigation__extra
+                li: a(href='#') Sell on Martfury
+                li: a(href='#') Tract your order
+                li
+                    .ps-dropdown
+                        a(href='#') US Dollar
+                        ul.ps-dropdown-menu
+                            li: a(href='#') Us Dollar
+                            li: a(href='#') Euro
+                li
+                    .ps-dropdown.language
+                        a(href='#')
+                            img(src="img/flag/en.png" alt="")
+                            | English
+                        ul.ps-dropdown-menu
+                            li: a(href='#')
+                                img(src="img/flag/germany.png" alt="")
+                                |  Germany
+                            li: a(href='#')
+                                img(src="img/flag/fr.png" alt="")
+                                |  France
+    .navigation--mobile
+        .navigation__left: a(href='index.html').ps-logo: img(src="img/logo_light.png" alt="")
+        .navigation__right
+            .header__actions
+                .ps-cart--mini
+                    a(href='#').header__extra
+                        i.icon-bag2
+                        span: i 0
+                    include modules/mini-cart
+                .ps-block--user-header
+                    .ps-block__left: i.icon-user
+                    .ps-block__right
+                        a(href='my-account.html') Login
+                        a(href='my-account.html') Register
+    .ps-search--mobile
+        form(action="index.html" method="get" class="ps-form--search-mobile")
+            .form-group--nest
+                input.form-control(type="text" placeholder="Search something...")
+                button: i.icon-magnifier
+
+include cart-mobile
+include navigation-mobile
+include navigation-footer
+include search-sidebar

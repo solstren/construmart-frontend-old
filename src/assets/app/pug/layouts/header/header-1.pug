@@ -1,0 +1,16 @@
+extends ../../master
+
+block data
+    include ../../utilties/product-mixins
+    include ../../data/home-1/home-products
+
+block page_header
+    - var currentPage = 'homepage'
+    include ../../shared/headers/header-1
+    include ../../shared/headers/header-moble-1
+
+block page_content
+    include modules/header-content
+    include ../../partials/sections/newletter-fullwidth
+    //include ../../shared/footers/footer
+

@@ -1,0 +1,40 @@
+.ps-vendor-dashboard
+    .container
+        .ps-section__header
+            h3 Vendor Dasboard Free
+            p Designed base on WC Vendor Plugin. Martfury also fully comptatiable with other popular plugins as Dokan, YITH, etc .Can help you turns your site into multi-vendor eCommerce site.
+        .ps-section__content
+            ul.ps-section__links
+                li.active: a(href='#') Dashboard
+                li: a(href='#') Products
+                li: a(href='#') Order
+                li: a(href='#') Setting
+                li: a(href='#') View Store
+            .ps-block--vendor-dashboard
+                .ps-block__header
+                    h3 Sale Report
+                .ps-block__content
+                    form(action="index.html" method="get" class="ps-form--vendor-datetimepicker")
+                        .row
+                            +column({cols: [3, 3, 4, 6, 12]})
+                                .input-group
+                                    .input-group-prepend
+                                        span.input-group-text#time-from From
+                                    input.form-control.ps-datepicker(aria-label="Username" aria-describedby="time-from")
+                            +column({cols: [3, 3, 4, 6, 12]})
+                                .input-group
+                                    .input-group-prepend
+                                        span.input-group-text#time-form To
+                                    input.form-control.ps-datepicker(aria-label="Username" aria-describedby="time-to")
+                            +column({cols: [3, 3, 4, 6, 12]})
+                                button.ps-btn
+                                    i.icon-sync2
+                                    |  Update
+                    include ../../tables/table-sale-report
+            .ps-block--vendor-dashboard
+                .ps-block__header
+                    h3 Recent Orders
+                .ps-block__content
+                    include ../../tables/table-recent-orders
+
+

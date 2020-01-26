@@ -1,0 +1,25 @@
+.ps-block--shop-features
+    .ps-block__header
+        h3 Best Sale Items
+        .ps-block__navigation
+            a(href='#bestsale' ).ps-carousel__prev: i.icon-chevron-left
+            a(href='#bestsale').ps-carousel__next: i.icon-chevron-right
+    .ps-block__content
+        #bestsale.owl-slider(
+        data-owl-auto= 'true',
+        data-owl-loop= 'true',
+        data-owl-speed= '10000',
+        data-owl-gap= '30',
+        data-owl-nav= 'false',
+        data-owl-dots= 'false',
+        data-owl-item= '4',
+        data-owl-item-xs= '2',
+        data-owl-item-sm= '2',
+        data-owl-item-md= '2',
+        data-owl-item-lg= '3',
+        data-owl-item-xl= '4',
+        data-owl-duration= '1000',
+        data-owl-mousedrag= 'on'
+        )
+            each val in best_seller_items
+                +product(val)

@@ -1,0 +1,28 @@
+extends ../../master-2
+
+block data
+    include ../../utilties/product-mixins
+    include ../../data/home-1/home-products
+    include ../../data/home-3/home-3-products
+
+block append style
+    link(rel="stylesheet", href="css/market-place-1.css")
+
+block page_header
+    - var currentPage = 'homepage'
+    include ../../shared/headers/header-marketplace-1
+    //include ../../shared/header-mobile
+
+block page_content
+    #homepage-3
+        - let layout = 'default';
+        include ../../partials/homepages/home-3/home-banner
+        include ../../partials/sections/site-features
+        include ../../partials/homepages/home-3/promotions
+        include ../../partials/homepages/home-3/deal-of-day
+        include ../../partials/homepages/home-3/product-boxes
+        include ../../partials/sections/newsletter
+
+    - let footer = 'default';
+    include ../../shared/footers/footer
+

@@ -1,0 +1,66 @@
+extends master
+
+
+block page_header
+
+    include utilties/mixins
+
+block page_content
+    -
+        pages = [
+            'index',
+            'homepage-2',
+            'homepage-3',
+            'homepage-4',
+            'homepage-5',
+            'homepage-6',
+            'homepage-7',
+            'homepage-8',
+            'homepage-9',
+            'shop-2-column',
+            'shop-3-column',
+            'shop-4-column',
+            'shop-6-column',
+            'shop-home-1',
+            'shop-metro',
+            'shop-sidebar',
+            'shop-sidebar-right',
+            'product-standard',
+            'product-gallery',
+            'product-sticky',
+            'product-sticky-2',
+            'product-color-swatch',
+            'product-image-swatch',
+            'product-gallery-swatch',
+            'product-thumbnail-right',
+            'product-thumbnail-bottom',
+            'product-thumbnail-outside',
+            'product-bundle',
+            'portfolio-2-columns',
+            'portfolio-3-columns',
+            'portfolio-4-columns',
+            'header-automart',
+            'header-electronic',
+            'header-furniture',
+            'header-market-1',
+            'header-market-2',
+            'header-market-3',
+            'header-market-4',
+            'header-organic',
+            'about-us',
+            'contact-us',
+            'faqs',
+            'my-account',
+            'orders-tracking',
+            'returns-exchanges',
+            'size-guides',
+            'terms-and-conditions',
+        ]
+    .section.ps-section.pt-50
+        .container
+            .jumbotron
+                .text-center: img(src="img/logo.png" alt="")
+                ol(style="padding: 0; margin: 0; padding-left: 20px;")
+                        each val in pages
+                            li(style="line-heigh: 30px;"): a(href=val+".html" target="_blank") #{val}
+

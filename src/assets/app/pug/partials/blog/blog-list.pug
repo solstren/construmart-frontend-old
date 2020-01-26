@@ -1,0 +1,91 @@
+.ps-blog
+    .ps-blog__header
+        ul.ps-list--blog-links
+            li.active: a(href='blog-list.html') All
+            li: a(href='blog-list.html') Life Style
+            li: a(href='blog-list.html') Technology
+            li: a(href='blog-list.html') Entertaiment
+            li: a(href='blog-list.html') Business
+            li: a(href='blog-list.html') Others
+            li: a(href='blog-list.html') Fashion
+    .ps-blog__content
+        .ps-post.ps-post--horizontal
+            .ps-post__thumbnail
+                .embed-responsive.embed-responsive-16by9
+                    iframe( scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=true&amp;url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F323674116&amp;show_artwork=true&amp;maxwidth=840&amp;maxheight=1000&amp;dnt=1" id="fitvid0")
+            .ps-post__content
+                .ps-post__top
+                    .ps-post__meta
+                        a(href='#') Entertaiment
+                        a(href='#') Technology
+                    a(href='#').ps-post__title Experience Great Sound With Beats’s Headphone
+                    .ps-post__desc
+                        p Lorem ipsum dolor sit amet, dolor siterim consectetur adipiscing elit. Phasellus duio faucibus est sed…
+                p December 17, 2017 by
+                    a(href='#')  drfurion
+        .ps-post.ps-post--horizontal
+            .ps-post__thumbnail
+                .embed-responsive.embed-responsive-16by9
+                    iframe( src="https://player.vimeo.com/video/10920432?dnt=1&amp;app_id=122963" frameborder="0" title="Architectural Film - Interior" allow="autoplay; fullscreen")
+            .ps-post__content
+                .ps-post__top
+                    .ps-post__meta
+                        a(href='#') Entertaiment
+                        a(href='#') Others
+                    a(href='#').ps-post__title Home Interior: Modern Style 2017
+                    .ps-post__desc
+                        p Lorem ipsum dolor sit amet, dolor siterim consectetur adipiscing elit. Phasellus duio faucibus est sed…
+                p December 17, 2017 by
+                    a(href='#')  drfurion
+        each post, index in blogList
+            .ps-post.ps-post--horizontal
+                .ps-post__thumbnail
+                    a(href='blog-detail.html').ps-post__overlay
+                    img(src=post.imagePath alt="")
+                    if post.badge
+                        .ps-post__badge: i(class=post.badge)
+                .ps-post__content
+                    .ps-post__top
+                        .ps-post__meta
+                            each category in post.categories
+                                a(href='#') #{category}
+                        a(href='#').ps-post__title #{post.title}
+                        .ps-post__desc
+                            p Lorem ipsum dolor sit amet, dolor siterim consectetur adipiscing elit. Phasellus duio faucibus est sed…
+                    p December 17, 2017 by
+                        a(href='#')  drfurion
+            if index === 2
+                .ps-post.ps-post--horizontal
+                    .ps-post__thumbnail
+                        a(href='blog-detail.html').ps-post__overlay
+                        .ps-carouse--nav-inside.owl-slider(
+                        data-owl-auto= 'false',
+                        data-owl-loop= 'false',
+                        data-owl-speed= '5000',
+                        data-owl-gap= '0',
+                        data-owl-nav= 'true',
+                        data-owl-dots= 'false',
+                        data-owl-item= '1',
+                        data-owl-item-xs= '1',
+                        data-owl-item-sm= '1',
+                        data-owl-item-md= '1',
+                        data-owl-item-lg= '1',
+                        data-owl-duration= '1000',
+                        data-owl-mousedrag= 'on'
+                        )
+                            img(src='img/blog/list/2.jpg' alt="")
+                            img(src='img/blog/list/3.jpg' alt="")
+                            img(src='img/blog/list/4.jpg' alt="")
+                        if post.badge
+                            .ps-post__badge: i(class=post.badge)
+                    .ps-post__content
+                        .ps-post__top
+                            .ps-post__meta
+                                each category in post.categories
+                                    a(href='#') #{category}
+                            a(href='#').ps-post__title #{post.title}
+                            .ps-post__desc
+                                p Lorem ipsum dolor sit amet, dolor siterim consectetur adipiscing elit. Phasellus duio faucibus est sed…
+                        p December 17, 2017 by
+                            a(href='#')  drfurion
+    +pagination

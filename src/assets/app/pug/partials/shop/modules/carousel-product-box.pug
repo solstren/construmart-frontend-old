@@ -1,0 +1,46 @@
+.ps-product-list
+    .ps-section__header
+        h3 Best Seller In The Last Months
+    .ps-section__content
+        .ps-carousel--nav.owl-slider(
+        data-owl-auto= 'false',
+        data-owl-loop= 'false',
+        data-owl-speed= '10000',
+        data-owl-gap= '0',
+        data-owl-nav= 'true',
+        data-owl-dots= 'true',
+        data-owl-item= '5',
+        data-owl-item-xs= '2',
+        data-owl-item-sm= '2',
+        data-owl-item-md= '2',
+        data-owl-item-lg= '4',
+        data-owl-item-xl= '5',
+        data-owl-duration= '1000',
+        data-owl-mousedrag= 'on'
+        )
+            each product, index in shop_products
+                if index > 5
+                    +product(product)
+.ps-product-list
+    .ps-section__header
+        h3 New Arrivals
+    .ps-section__content
+        .ps-carousel--nav.owl-slider(
+        data-owl-auto= 'false',
+        data-owl-loop= 'false',
+        data-owl-speed= '10000',
+        data-owl-gap= '0',
+        data-owl-nav= 'true',
+        data-owl-dots= 'true',
+        data-owl-item= '5',
+        data-owl-item-xs= '2',
+        data-owl-item-sm= '2',
+        data-owl-item-md= '2',
+        data-owl-item-lg= '4',
+        data-owl-item-xl= '5',
+        data-owl-duration= '1000',
+        data-owl-mousedrag= 'on'
+        )
+            each product, index in shop_products
+                if index > 8
+                    +product(product)

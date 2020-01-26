@@ -1,0 +1,25 @@
+extends ../../master
+block data
+    include ../../data/shop/shop-sidebar-links
+    include ../../data/blog/blog-grid
+
+block page_header
+    - var currentPage = 'shop'
+    include ../../shared/headers/header-1
+    include ../../shared/headers/header-mobile
+
+block page_content
+    .ps-page--blog
+        .container
+            .ps-page__header
+                h1 Our Press
+                .ps-breadcrumb--2
+                    ul.breadcrumb
+                        li: a(href='index.html') Home
+                        li Our Press
+            include ../../partials/blog/blog-left-sidebar
+    include ../../partials/sections/newletter-fullwidth
+    include ../../shared/footers/footer
+    include ../../shared/shop-filter
+
+

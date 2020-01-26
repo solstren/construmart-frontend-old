@@ -1,0 +1,96 @@
+include ../../data/menu/menu
+include ../../data/menu/menu-product-categories
+header.header.header--market-place-3(data-sticky="true")
+    .header__top
+        .container
+            .header__left
+                include modules/menu-dropdown
+                a(href='index.html').ps-logo: img(src="img/logo_light.png" alt="")
+            .header__center
+                form(action="index.html" method="get" class="ps-form--quick-search")
+                    .form-group--icon
+                        i.icon-chevron-down
+                        select.form-control
+                            option(value="1") All
+                            option(value="1") Bags
+                            option(value="1") Shoes
+                            option(value="1") Men
+                            option(value="1") Women
+                            option(value="1") Sunglasses
+                    input.form-control(type="text" placeholder="I'm shopping for...")
+                    button Search
+            .header__right
+                include modules/header-actions
+    nav.navigation
+        .container
+            .navigation__left
+                .menu--product-categories
+                    .menu__toggle.active
+                        i.icon-menu
+                        span  Shop by Department
+                    .menu__content
+            .navigation__right
+                ul.menu.menu--recent-view
+                    li.menu-item-has-children
+                        a(href='#') Your Recently Viewed
+                        .navigation__recent-products
+                            .ps-carousel--nav.owl-slider(
+                            data-owl-auto= 'true',
+                            data-owl-loop= 'true',
+                            data-owl-speed= '5000',
+                            data-owl-gap= '30',
+                            data-owl-nav= 'true',
+                            data-owl-dots= 'false',
+                            data-owl-item= '8',
+                            data-owl-item-xs= '3',
+                            data-owl-item-sm= '4',
+                            data-owl-item-md= '5',
+                            data-owl-item-lg= '6',
+                            data-owl-duration= '1000',
+                            data-owl-mousedrag= 'on'
+                            )
+                                a(href='#'): img(src="img/products/technology/1.jpg" alt="")
+                                a(href='#'): img(src="img/products/technology/2.jpg" alt="")
+                                a(href='#'): img(src="img/products/technology/3.jpg" alt="")
+                                a(href='#'): img(src="img/products/technology/4.jpg" alt="")
+                                a(href='#'): img(src="img/products/technology/5.jpg" alt="")
+                                a(href='#'): img(src="img/products/technology/6.jpg" alt="")
+                                a(href='#'): img(src="img/products/technology/7.jpg" alt="")
+                                a(href='#'): img(src="img/products/technology/8.jpg" alt="")
+                            p
+                                a(href='shop-default.html') See all your recently viewed items
+
+                ul.navigation__extra
+                    li: a(href='#') Sell on Martfury
+                    li: a(href='#') Tract your order
+                    li
+                        .ps-dropdown
+                            a(href='#') US Dollar
+                            ul.ps-dropdown-menu
+                                li: a(href='#') Us Dollar
+                                li: a(href='#') Euro
+                    li
+                        .ps-dropdown.language
+                            a(href='#')
+                                img(src="img/flag/en.png" alt="")
+                                | English
+                            ul.ps-dropdown-menu
+                                li: a(href='#')
+                                    img(src="img/flag/germany.png" alt="")
+                                    |  Germany
+                                li: a(href='#')
+                                    img(src="img/flag/fr.png" alt="")
+                                    |  France
+
+
+
+
+
+
+
+
+
+
+
+
+

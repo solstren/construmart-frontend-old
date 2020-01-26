@@ -1,0 +1,32 @@
+extends ../../master
+
+block data
+    include ../../utilties/product-mixins
+    include ../../data/home-1/home-products
+    include ../../data/home-3/home-3-products
+    include ../../data/home-7/home-data
+
+block append style
+    link(rel="stylesheet", href="css/electronic.css")
+
+block page_header
+    - var currentPage = 'homepage'
+    include ../../shared/headers/header-electronic
+    include ../../shared/headers/header-mobile
+
+block page_content
+    #homepage-7
+        - let layout = 'default';
+        include ../../partials/homepages/home-7/home-banner
+        include ../../partials/homepages/home-7/home-top-categories
+        include ../../partials/homepages/home-7/deal-of-day
+        include ../../partials/homepages/home-7/home-promotions
+        include ../../partials/homepages/home-7/home-best-seller
+        include ../../partials/homepages/home-7/home-promotions-2
+        include ../../partials/homepages/home-7/home-electronics
+        include ../../partials/homepages/home-7/home-technology
+        include ../../partials/homepages/home-7/home-camera
+        include ../../partials/homepages/home-7/home-blog
+    - let footer = 'default';
+    include ../../shared/footers/footer
+

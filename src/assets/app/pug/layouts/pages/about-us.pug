@@ -1,0 +1,28 @@
+extends ../../master
+
+block data
+    include ../../utilties/product-mixins
+    include ../../data/shop/shop-data
+    include ../../data/shop/shop-sidebar-links
+
+block page_header
+    - var currentPage = 'homepage'
+    include ../../shared/headers/header-1
+    include ../../shared/headers/header-mobile
+
+block page_content
+    .ps-breadcrumb
+        .container
+            ul.breadcrumb
+                li: a(href='index.html') Home
+                li Shop categories
+    #about-us.ps-page--single
+        img(src="img/bg/about-us.jpg" alt="")
+        include ../../partials/pages/about-us/about-intro
+        //include ../../partials/pages/about-us/milestone
+        include ../../partials/pages/about-us/our-team
+        include ../../partials/pages/about-us/awards
+    include ../../partials/sections/newsletter
+    include ../../shared/footers/footer
+
+

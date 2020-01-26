@@ -1,0 +1,62 @@
+.ps-block--product-box
+    .ps-block__header
+        h3
+            i.icon-shirt
+            |  Home, Garden & Kitchen
+        ul
+            li: a(href='shop-default.html') Furniture
+            li: a(href='shop-default.html') Home Decor
+            li: a(href='shop-default.html') Cookware
+            li: a(href='shop-default.html') Utensil & Gadget
+            li: a(href='shop-default.html') Garden Tools
+    .ps-block__content
+        .ps-block__left
+            .ps-carousel--nav-inside.owl-slider(
+            data-owl-auto= 'true',
+            data-owl-loop= 'true',
+            data-owl-speed= '5000',
+            data-owl-gap= '0',
+            data-owl-nav= 'true',
+            data-owl-dots= 'true',
+            data-owl-item= '1',
+            data-owl-item-xs= '1',
+            data-owl-item-sm= '1',
+            data-owl-item-md= '1',
+            data-owl-item-lg= '1',
+            data-owl-duration= '1000',
+            data-owl-mousedrag= 'on'
+            )
+                a(href='shop-default.html'): img(src="img/promotions/home-5/kitchen-2.jpg" alt="")
+                a(href='shop-default.html'): img(src="img/promotions/home-5/kitchen-1.jpg" alt="")
+            .ps-block__products.ps-tab-root
+                ul.ps-tab-list
+                    li.current: a(href='#product-box-1') New Arrivals
+                    li: a(href='#product-box-2') Best Seller
+                    li: a(href='#product-box-3') Sale
+                .ps-tabs
+                    #product-box-1.ps-tab.active
+                        .row
+                            each product, index in home_3_garden_kitchen
+                                if index < 4
+                                    +column({cols: [3, 3, 3, 4, 6]})
+                                        +product(product, '')
+                    #product-box-2.ps-tab
+                        .row
+                            each product, index in home_3_garden_kitchen
+                                if index > 1 && index < 6
+                                    +column({cols: [3, 3, 3, 4, 6]})
+                                        +product(product, '')
+                    #product-box-3.ps-tab
+                        .row
+                            each product, index in home_3_garden_kitchen
+                                if index > 0 && index < 5
+                                    +column({cols: [3, 3, 3, 4, 6]})
+                                        +product(product, '')
+        .ps-block__right
+            figure
+                figcaption Recommended For You
+                each product, index in home_3_garden_kitchen
+                    if index < 5
+                        +product-horizontal(product)
+
+

@@ -1,0 +1,29 @@
+.ps-blog
+    .ps-blog__header
+        ul.ps-list--blog-links
+            li.active: a(href='blog-list.html') All
+            li: a(href='blog-list.html') Life Style
+            li: a(href='blog-list.html') Technology
+            li: a(href='blog-list.html') Entertaiment
+            li: a(href='blog-list.html') Business
+            li: a(href='blog-list.html') Others
+            li: a(href='blog-list.html') Fashion
+    .ps-blog__content
+        .row
+            each post in blogGrid
+                if post.type === 'normal'
+                    +column({cols: [4, 4, 6, 12, 12]})
+                        .ps-post
+                            .ps-post__thumbnail
+                                a(href='blog-detail.html').ps-post__overlay
+                                img(src=post.imagePath alt="")
+                                if post.badge
+                                    .ps-post__badge: i(class=post.badge)
+                            .ps-post__content
+                                .ps-post__meta
+                                    each category in post.categories
+                                        a(href='#') #{category}
+                                a(href='#').ps-post__title #{post.title}
+                                p December 17, 2017 by
+                                    a(href='#')  drfurion
+        +pagination

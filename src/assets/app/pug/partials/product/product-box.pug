@@ -1,0 +1,25 @@
+.ps-product--detail.ps-product--box
+    .ps-product__header.ps-product__box
+        include thumbnail/box
+        include information/box
+    //-include ../../partials/product/modules/customer-bought
+    .ps-product__content.ps-tab-root
+        .row
+            +column({cols: [9, 12, 12, 12, 12]})
+                .ps-product__box
+                    ul(class="ps-tab-list")
+                        li.active: a(href="#tab-1") Description
+                        li: a(href="#tab-2") Specification
+                        li: a(href='#tab-3') Vendor
+                        li: a(href='#tab-4') Reviews (1)
+                        li: a(href='#tab-5') Questions and Answers
+                        li: a(href='#tab-6') More Offers
+                    include modules/tab-contents
+            +column({cols: [3, 12, 12, 12, 12]})
+                .ps-product__box
+                    aside.widget.widget_same-brand
+                        h3 Same Brand
+                        .widget__content
+                            each val, index in shop_products
+                                if index > 4 && index < 7
+                                    +product(val)

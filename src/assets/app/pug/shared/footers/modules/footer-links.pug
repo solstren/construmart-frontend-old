@@ -1,0 +1,6 @@
+.ps-footer__links
+    each val in footerLinks
+        p
+            strong #{val.text}
+            each link in val.links
+                a(href='#') #{link}

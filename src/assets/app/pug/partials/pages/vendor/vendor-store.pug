@@ -1,0 +1,98 @@
+.ps-vendor-store
+    .container
+        .ps-section__container
+            .ps-section__left
+                .ps-block--vendor
+                    .ps-block__thumbnail: img(src="img/vendor/vendor-store.jpg" alt="")
+                    .ps-block__container
+                        .ps-block__header
+                            h4 Digitalworld us
+                            +rating(true)
+                            p
+                                strong 85% Positive
+                                |   (562 rating)
+                        span.ps-block__divider
+                        .ps-block__content
+                            p <strong>Digiworld US</strong>, New York’s no.1 online retailer was established in May 2012 with the aim and vision to become the one-stop shop for retail in New York with implementation of best practices both online
+                            span.ps-block__divider
+                            p
+                                strong Address
+                                |  325 Orchard Str, New York, NY 10002
+                            figure
+                                figcaption Foloow us on social
+                                ul.ps-list--social-color
+                                    li: a(href='#').facebook: i.fa.fa-facebook
+                                    li: a(href='#').twitter: i.fa.fa-twitter
+                                    li: a(href='#').linkedin: i.fa.fa-linkedin
+                                    li: a(href='#').feed: i.fa.fa-feed
+                        .ps-block__footer
+                            p Call us directly
+                                strong (+053) 77-637-3300
+                            p or Or if you have any question
+                            a(href='').ps-btn.ps-btn--fullwidth Contact Seller
+            .ps-section__right
+                .ps-block--vendor-filter
+                    .ps-block__left
+                        ul
+                            li.active: a(href='#') Products
+                            li: a(href='#') Reviews
+                            li: a(href='#') About
+                    .ps-block__right
+                        form(action="index.html" method="get" class="ps-form--search")
+                            input.form-control(type="text" placeholder="Search in this shop")
+                            button: i.fa.fa-search
+                .ps-vendor-best-seller
+                    .ps-section__header
+                        h3 Best Seller items
+                        .ps-section__nav
+                            a(href='#vendor-bestseller').ps-carousel__prev: i.icon-chevron-left
+                            a(href='#vendor-bestseller').ps-carousel__next: i.icon-chevron-right
+                    .ps-section__content
+                        #vendor-bestseller.owl-slider(
+                        data-owl-auto= 'true',
+                        data-owl-loop= 'true',
+                        data-owl-speed= '5000',
+                        data-owl-gap= '0',
+                        data-owl-nav= 'false',
+                        data-owl-dots= 'false',
+                        data-owl-item= '4',
+                        data-owl-item-xs= '2',
+                        data-owl-item-sm= '3',
+                        data-owl-item-md= '3',
+                        data-owl-item-lg= '4',
+                        data-owl-duration= '1000',
+                        data-owl-mousedrag= 'on'
+                        )
+                            each product in producDealOfDay
+                                +product(product)
+                .ps-shopping.ps-tab-root
+                    .ps-shopping__header
+                        p <strong> 36</strong> Products found
+                        .ps-shopping__actions
+                            select.ps-select(data-placeholder="Sort Items")
+                                option Sort by latest
+                                option Sort by popularity
+                                option Sort by average rating
+                                option Sort by price: low to high
+                                option Sort by price: high to low
+                            .ps-shopping__view
+                                p View
+                                ul.ps-tab-list
+                                    li.active: a(href='#tab-1'): i.icon-grid
+                                    li: a(href='#tab-2'): i.icon-list4
+                    .ps-tabs
+                        #tab-1.ps-tab.active
+                            .row
+                                each val, index in producDealOfDay
+                                    if index < 12
+                                        +column({cols: [3, 4, 4, 6, 6]})
+                                            +product(val)
+                            +pagination
+                        #tab-2.ps-tab
+                            each val, index in producDealOfDay
+                                if index < 12
+                                    +product-wide(val)
+                            +pagination
+
+
+

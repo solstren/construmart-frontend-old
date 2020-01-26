@@ -1,0 +1,37 @@
+extends ../../master
+
+block page_content
+    .ps-page--comming-soon
+        .container
+            .ps-page__header
+                a(href='index.html').ps-logo: img(src="img/coming-soon-logo.png" alt="")
+                h1  Coming Soon
+                p Condimentum ipsum a adipiscing hac dolor set consectetur urna commodo elit parturient
+                a molestie ut nisl partu convallier ullamcorpe.
+            .ps-page__content
+                img(src="img/coming-soon.jpg" alt="")
+                figure
+                    figcaption NEW STORE WE BE LAUNCHED IN:
+                    ul.ps-countdown(data-time="July 21, 2019 15:37:25")
+                        li
+                            span.days
+                            p Days
+                        li
+                            span.hours
+                            p Hours
+                        li
+                            span.minutes
+                            p Minutes
+                        li
+                            span.seconds
+                            p Second
+            .ps-page__footer
+                ul.ps-list--social
+                    li: a(href='#'): i.fa.fa-instagram
+                    li: a(href='#'): i.fa.fa-facebook
+                    li: a(href='#'): i.fa.fa-twitter
+                    li: a(href='#'): i.fa.fa-youtube-play
+
+
+
+

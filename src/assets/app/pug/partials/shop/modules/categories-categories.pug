@@ -1,0 +1,30 @@
+.ps-catalog-top
+    .row
+        +column({cols: [3, 12, 12, 12, 12]})
+            .ps-block--menu-categories(data-mh="catalog-top")
+                .ps-block__header: h3 Categories
+                .ps-block__content
+                    ul.ps-list--menu-cateogories
+                        each link in shop_categories_catalog
+                            if link.extraClass
+                                li(class=link.extraClass)
+                                    a(href=link.url) #{link.text}
+                                    ul(class=link.subClass)
+                                        each childLink in link.subMenu
+                                            li: a(href=childLink.url) #{childLink.text}
+                            else
+                                li: a(href=link.url) #{link.text}
+
+        +column({cols: [9, 12, 12, 12, 12]})
+            .ps-block--categories-grid(data-mh='catalog-top')
+                each category, index in shop_categories
+                    if index < 6
+                        .ps-block--category-2(data-mh="categories")
+                            .ps-block__thumbnail: img(src=category.thumbnail alt="")
+                            .ps-block__content
+                                h4 #{category.title}
+                                ul
+                                    each link in category.links
+                                        li: a(href='shop-default.html') #{link}
+                                a(href='#') Shop All
+

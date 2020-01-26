@@ -1,0 +1,42 @@
+.ps-my-account
+    .container
+        form(action="link.html" method="get" class="ps-form--account ps-tab-root")
+            ul.ps-tab-list
+                li.active: a(href='#sign-in') Login
+                li: a(href='#register') Register
+            .ps-tabs
+                #sign-in.ps-tab.active
+                    .ps-form__content
+                        h5 Log In Your Account
+                        .form-group
+                            input.form-control(type="text" placeholder="Username or email address")
+                        .form-group.form-forgot
+                            input.form-control(type="text" placeholder="Password")
+                            a(href='') Forgot?
+                        .form-group
+                            +checkbox('remember-me', 'remember-me', 'Rememeber me', '', '')
+                        .form-group.submtit
+                            button.ps-btn.ps-btn--fullwidth Login
+                    .ps-form__footer
+                        p Connect with:
+                        ul.ps-list--social
+                            li: a(href='#').facebook: i.fa.fa-facebook
+                            li: a(href='#').google: i.fa.fa-google-plus
+                            li: a(href='#').twitter: i.fa.fa-twitter
+                            li: a(href='#').instagram: i.fa.fa-instagram
+                #register.ps-tab
+                    .ps-form__content
+                        h5 Register An Account
+                        .form-group
+                            input.form-control(type="text" placeholder="Username or email address")
+                        .form-group
+                            input.form-control(type="text" placeholder="Password")
+                        .form-group.submtit
+                            button.ps-btn.ps-btn--fullwidth Login
+                    .ps-form__footer
+                        p Connect with:
+                        ul.ps-list--social
+                            li: a(href='#').facebook: i.fa.fa-facebook
+                            li: a(href='#').google: i.fa.fa-google-plus
+                            li: a(href='#').twitter: i.fa.fa-twitter
+                            li: a(href='#').instagram: i.fa.fa-instagram

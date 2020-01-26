@@ -1,0 +1,106 @@
+.ps-search-trending
+    .container
+        .ps-section__header
+            h3 Search Trending
+                span Updated at 9:00AM
+        .ps-section__content
+            .ps-block--categories-tabs.ps-tab-root
+                .ps-block__header
+                    .ps-carousel--nav.ps-tab-list.owl-slider(
+                    data-owl-auto= 'false',
+                    data-owl-speed= '1000',
+                    data-owl-gap= '0',
+                    data-owl-nav= 'true',
+                    data-owl-dots= 'true',
+                    data-owl-item= '8',
+                    data-owl-item-xs= '3',
+                    data-owl-item-sm= '4',
+                    data-owl-item-md= '6',
+                    data-owl-item-lg= '6',
+                    data-owl-duration= '500',
+                    data-owl-mousedrag= 'on'
+                    )
+                        a(href='#tab-1').active
+                            i.icon-star
+                            span Hot Trending
+                        a(href='#tab-2')
+                            i.icon-smartphone
+                            span Cell Phones
+                        a(href='#tab-3')
+                            i.icon-desktop
+                            span Computers
+                        a(href='#tab-4')
+                            i.icon-lampshade
+                            span Furnitures
+                        a(href='#tab-5')
+                            i.icon-shirt
+                            span T-Shirts
+                        a(href='#tab-6')
+                            i.icon-baby-bottle
+                            span Baby & Mom
+                        a(href='#tab-7')
+                            i.icon-baseball
+                            span Sports
+                        a(href='#tab-8')
+                            i.icon-book2
+                            span Book & Office
+                        a(href='#tab-9')
+                            i.icon-car-siren
+                            span Cars
+                .ps-tabs
+                    .ps-tabs
+                        #tab-1.ps-tab.active
+                            .ps-block__item
+                                each category in trending_categories
+                                    a(href='shop-default.html')
+                                        img(src=category.imagePath alt=category.text)
+                                        span #{category.text}
+                        #tab-2.ps-tab
+                            .ps-block__item
+                                each category, index in trending_categories
+                                    if index > 1
+                                        a(href='shop-default.html')
+                                            img(src=category.imagePath alt=category.text)
+                                            span #{category.text}
+                        #tab-3.ps-tab
+                            .ps-block__item
+                                each category, index in trending_categories
+                                    if index > 2
+                                        a(href='shop-default.html')
+                                            img(src=category.imagePath alt=category.text)
+                                            span #{category.text}
+                        #tab-4.ps-tab
+                            .ps-block__item
+                                each category, index in trending_categories
+                                    if index > 3
+                                        a(href='shop-default.html')
+                                            img(src=category.imagePath alt=category.text)
+                                            span #{category.text}
+                        #tab-5.ps-tab
+                            .ps-block__item
+                                each category, index in trending_categories
+                                    if index > 4
+                                        a(href='shop-default.html')
+                                            img(src=category.imagePath alt=category.text)
+                                            span #{category.text}
+                        #tab-6.ps-tab
+                            .ps-block__item
+                                each category, index in trending_categories
+                                    if index > 5
+                                        a(href='shop-default.html')
+                                            img(src=category.imagePath alt=category.text)
+                                            span #{category.text}
+                        #tab-7.ps-tab
+                            .ps-block__item
+                                each category, index in trending_categories
+                                    if index > 6
+                                        a(href='shop-default.html')
+                                            img(src=category.imagePath alt=category.text)
+                                            span #{category.text}
+                        #tab-7.ps-tab
+                            .ps-block__item
+                                each category, index in trending_categories
+                                    if index > 7
+                                        a(href='shop-default.html')
+                                            img(src=category.imagePath alt=category.text)
+                                            span #{category.text}

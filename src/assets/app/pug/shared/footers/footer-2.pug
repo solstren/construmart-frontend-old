@@ -1,0 +1,53 @@
+include ../../data/footer/data-footer
+footer.ps-footer.ps-footer--2
+    .container
+        .ps-footer__content
+            .row
+                +column({cols: [3, 3, 4, 6, 6]})
+                    aside.widget.widget_footer
+                        h4.widget-title Quick links
+                        ul.ps-list--link
+                            li: a(href='policy.html') Policy
+                            li: a(href='term-condition.html') Term & Condition
+                            li: a(href='shipping.html') Shipping
+                            li: a(href='return.html') Return
+                            li: a(href='faqs.html') FAQs
+                +column({cols: [3, 3, 4, 6, 6]})
+                    aside.widget.widget_footer
+                        h4.widget-title Company
+                        ul.ps-list--link
+                            li: a(href='about-us.html') About Us
+                            li: a(href='affilate.html') Affilate
+                            li: a(href='shipping.html') Career
+                            li: a(href='contact.html') Contact
+                +column({cols: [3, 3, 4, 6, 12]})
+                    aside.widget.widget_footer
+                        h4.widget-title Bussiness
+                        ul.ps-list--link
+                            li: a(href='our-press.html') Our Press
+                            li: a(href='checkout.html') Checkout
+                            li: a(href='my-account.html') My account
+                            li: a(href='shop.html') Shop
+                +column({cols: [3, 3, 6, 12, 12]})
+                    aside.widget.widget_newletters
+                        h4.widget-title Newsletter
+                        form(action="#" method="get" class="ps-form--newletter")
+                            .form-group--nest
+                                input.form-control(type="text" placeholder="Email Address")
+                                button.ps-btn Subscribe
+                            ul.ps-list--social
+                                li: a(href='#').facebook: i.fa.fa-facebook
+                                li: a(href='#').twitter: i.fa.fa-twitter
+                                li: a(href='#').google-plus: i.fa.fa-google-plus
+                                li: a(href='#').instagram: i.fa.fa-instagram
+        .ps-footer__copyright
+            p © 2018 Martfury. All Rights Reserved
+            p
+                span We Using Safe Payment For:
+                a(href='#'): img(src="img/payment-method/1.jpg" alt="")
+                a(href='#'): img(src="img/payment-method/2.jpg" alt="")
+                a(href='#'): img(src="img/payment-method/3.jpg" alt="")
+                a(href='#'): img(src="img/payment-method/4.jpg" alt="")
+                a(href='#'): img(src="img/payment-method/5.jpg" alt="")
+
+

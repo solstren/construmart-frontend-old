@@ -1,0 +1,31 @@
+extends ../../master
+
+block data
+    include ../../utilties/product-mixins
+    include ../../data/home-1/home-products
+    include ../../data/home-3/home-3-products
+
+block append style
+    link(rel="stylesheet", href="css/market-place-2.css")
+
+block page_header
+    - var currentPage = 'homepage'
+    include ../../shared/headers/header-market-place-2
+    include ../../shared/headers/header-mobile
+
+block page_content
+    #homepage-4
+        - let layout = 'default';
+        include ../../partials/homepages/home-4/home-banner
+        include ../../partials/homepages/home-4/home-deals-of-day
+        include ../../partials/homepages/home-4/top-categfories-of-mouth
+        include ../../partials/homepages/home-4/home-promotions
+        include ../../partials/homepages/home-4/electronisc
+        include ../../partials/homepages/home-4/clothings
+        include ../../partials/homepages/home-4/technologies
+        include ../../partials/homepages/home-4/kitchen
+        include ../../partials/homepages/home-4/healthy
+        include ../../partials/sections/download-app
+    - let footer = 'default';
+    include ../../shared/footers/footer-3
+

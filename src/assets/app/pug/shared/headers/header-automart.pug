@@ -1,0 +1,61 @@
+include ../../data/menu/menu
+include ../../data/menu/menu-product-categories
+include ../../data/menu/menu-autopart
+header.header.header--standard.header--autopart(data-sticky="true")
+    .header__top
+        .container
+            .header__left
+                p <strong>FREE SHIPPING</strong> for all orders over $100
+            .header__right
+                ul.header__top-links
+                    li: a(href='#') Store Location
+                    li: a(href='#') Track Your Order
+                    li
+                        .ps-dropdown
+                            a(href='#') US Dollar
+                            ul.ps-dropdown-menu
+                                li: a(href='#') Us Dollar
+                                li: a(href='#') Euro
+                    li
+                        .ps-block--user-header
+                            .ps-block__left: i.icon-user
+                            .ps-block__right
+                                a(href='my-account.html') Login
+                                a(href='my-account.html') Register
+
+    .header__content
+        .container
+            .header__content-left
+                a(href='index.html').ps-logo: img(src="img/logo-autopart.png" alt="")
+                include modules/menu-dropdown-autopart
+            .header__content-center
+                form(action="index.html" method="get" class="ps-form--quick-search")
+                    .form-group--icon
+                        i.icon-chevron-down
+                        select.form-control
+                            option(value="1") All
+                            option(value="1") Bags
+                            option(value="1") Shoes
+                            option(value="1") Men
+                            option(value="1") Women
+                            option(value="1") Sunglasses
+                    input.form-control(type="text" placeholder="I'm shopping for...")
+                    button Search
+            .header__content-right
+                include modules/autopart-actions
+    nav.navigation
+        .container
+            +createMenu(menuAutopart, 'menu menu--technology')
+
+
+
+
+
+
+
+
+
+
+
+
+

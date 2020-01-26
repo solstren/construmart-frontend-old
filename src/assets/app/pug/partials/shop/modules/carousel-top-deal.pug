@@ -1,0 +1,8 @@
+.ps-block--container-hightlight
+    .ps-section__header: h3 Top Deals Super Hot Today
+    .ps-section__content
+        .row
+            each product, index in shop_products
+                if index > 2 && index < 10
+                    +column({cols: [3, 3, 4, 6, 6]})
+                        +product(product, 'product-carousel')

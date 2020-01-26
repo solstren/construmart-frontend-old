@@ -1,0 +1,37 @@
+if appLayout == 'fullwidth'
+    .ps-download-app
+        .ps-container
+            .ps-block--download-app
+                .container
+                    .row
+                        +column({cols: [6, 6, 12, 12, 12]})
+                            .ps-block__thumbnail: img(src="img/app.png" alt="")
+                        +column({cols: [6, 6, 12, 12, 12]})
+                            .ps-block__content
+                                h3 Download Martfury App Now!
+                                p Shopping fastly and easily more with our app. Get a link to download the app on your phone
+                                form(action="do_action" method="post" class="ps-form--download-app")
+                                    .form-group--nest
+                                        input.form-control(type="Email" placeholder="Email Address")
+                                        button.ps-btn Subscribe
+                                p.download-link
+                                    a(href='#'): img(src="img/google-play.png" alt="")
+                                    a(href='#'): img(src="img/app-store.png" alt="")
+else
+    .ps-download-app
+        .container
+            .ps-block--download-app
+                .row
+                    +column({cols: [6, 6, 12, 12, 12]})
+                        .ps-block__thumbnail: img(src="img/app.png" alt="")
+                    +column({cols: [6, 6, 12, 12, 12]})
+                        .ps-block__content
+                            h3 Download Martfury App Now!
+                            p Shopping fastly and easily more with our app. Get a link to download the app on your phone
+                            form(action="do_action" method="post" class="ps-form--download-app")
+                                .form-group--nest
+                                    input.form-control(type="Email" placeholder="Email Address")
+                                    button.ps-btn Subscribe
+                            p.download-link
+                                a(href='#'): img(src="img/google-play.png" alt="")
+                                a(href='#'): img(src="img/app-store.png" alt="")

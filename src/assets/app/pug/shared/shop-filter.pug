@@ -1,0 +1,106 @@
+.ps-filter--sidebar
+    .ps-filter__header
+        h3 Filter
+        a(href='#').ps-btn--close.ps-btn--no-boder
+    .ps-filter__content
+        aside.widget.widget_shop
+            h4.widget-title Categories
+            +makeMenu(categories_1, 'ps-list--categories')
+        aside.widget.widget_shop
+            h4.widget-title BY BRANDS
+            form(action="do_action" method="get" class="ps-form--widget-search")
+                input.form-control(type="text" placeholder="")
+                button: i.icon-magnifier
+            figure.ps-custom-scrollbar(data-height=250)
+                +checkbox('brand-1', 'brand', "Adidas (3)", '', '', '')
+                +checkbox('brand-2', 'brand', "Amcrest (1)", '', '', '')
+                +checkbox('brand-3', 'brand', "Apple (2)", '', '', '')
+                +checkbox('brand-4', 'brand', "Asus (19)", '', '', '')
+                +checkbox('brand-5', 'brand', "Baxtex (20)", '', '', '')
+                +checkbox('brand-6', 'brand', "Adidas (11)", '', '', '')
+                +checkbox('brand-7', 'brand', "Casio (9)", '', '', '')
+                +checkbox('brand-8', 'brand', "Electrolux (0)", '', '', '')
+                +checkbox('brand-9', 'brand', "Gallaxy (0)", '', '', '')
+                +checkbox('brand-10', 'brand', "Samsung (0)", '', '', '')
+                +checkbox('brand-11', 'brand', "Sony (0)", '', '', '')
+            figure
+                h4.widget-title By Price
+                .ps-slider(data-default-min='13', data-default-max ='1300', data-max='1311' data-step='100', data-unit ='$')
+                p.ps-slider__meta
+                    | Price:
+                    span.ps-slider__value.ps-slider__min
+                    | -
+                    span.ps-slider__value.ps-slider__max
+
+            figure
+                h4.widget-title By Price
+                .ps-checkbox
+                    input.form-control(type="checkbox" id='review-1' name='review')
+                    label(for='review-1')
+                        span
+                            i.fa.fa-star.rate
+                            i.fa.fa-star.rate
+                            i.fa.fa-star.rate
+                            i.fa.fa-star.rate
+                            i.fa.fa-star.rate
+                        small (13)
+                .ps-checkbox
+                    input.form-control(type="checkbox" id='review-2' name='review')
+                    label(for='review-2')
+                        span
+                            i.fa.fa-star.rate
+                            i.fa.fa-star.rate
+                            i.fa.fa-star.rate
+                            i.fa.fa-star.rate
+                            i.fa.fa-star
+                        small (13)
+                .ps-checkbox
+                    input.form-control(type="checkbox" id='review-3' name='review')
+                    label(for='review-3')
+                        span
+                            i.fa.fa-star.rate
+                            i.fa.fa-star.rate
+                            i.fa.fa-star.rate
+                            i.fa.fa-star
+                            i.fa.fa-star
+                        small (5)
+                .ps-checkbox
+                    input.form-control(type="checkbox" id='review-4' name='review')
+                    label(for='review-4')
+                        span
+                            i.fa.fa-star.rate
+                            i.fa.fa-star.rate
+                            i.fa.fa-star
+                            i.fa.fa-star
+                            i.fa.fa-star
+                        small (5)
+                .ps-checkbox
+                    input.form-control(type="checkbox" id='review-5' name='review')
+                    label(for='review-5')
+                        span
+                            i.fa.fa-star.rate
+                            i.fa.fa-star
+                            i.fa.fa-star
+                            i.fa.fa-star
+                            i.fa.fa-star
+                        small (1)
+            figure
+                h4.widget-title By Color
+                +checkbox('color-1', 'size', '', 'ps-checkbox--color color-1 ps-checkbox--inline', '')
+                +checkbox('color-2', 'size', '', 'ps-checkbox--color color-2 ps-checkbox--inline', '')
+                +checkbox('color-3', 'size', '', 'ps-checkbox--color color-3 ps-checkbox--inline', '')
+                +checkbox('color-4', 'size', '', 'ps-checkbox--color color-4 ps-checkbox--inline', '')
+                +checkbox('color-5', 'size', '', 'ps-checkbox--color color-5 ps-checkbox--inline', '')
+            figure.sizes
+                h4.widget-title BY SIZE
+                a(href='#') L
+                a(href='#') M
+                a(href='#') S
+                a(href='#') XL
+
+
+
+
+
+
+

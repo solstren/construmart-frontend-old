@@ -1,0 +1,27 @@
+extends ../../master
+
+block data
+    include ../../data/product/product-default
+
+block page_header
+    - var currentPage = 'homepage'
+    include ../../shared/headers/header-1
+    include ../../shared/headers/header-mobile
+
+block page_content
+    .ps-breadcrumb
+        .ps-container
+            ul.breadcrumb
+                li: a(href='index.html') Home
+                li: a(href='shop-default.html') Garden & Kitchen
+                li: a(href='shop-default.html') Powers And Hand Tools
+                li Magic Bullet NutriBullet Pro 900 Series Blender
+    .ps-page--product
+        .ps-container
+            include ../../partials/product/product-out-stock
+            include ../../partials/product/modules/customer-bought
+            include ../../partials/product/modules/related-product
+    include ../../partials/sections/newsletter
+    include ../../shared/footers/footer
+
+

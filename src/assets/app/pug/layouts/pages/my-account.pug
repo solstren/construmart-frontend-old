@@ -1,0 +1,25 @@
+extends ../../master
+
+block data
+
+block page_header
+    - var currentPage = 'homepage'
+    include ../../shared/headers/header-market-place-1-no-banner
+    include ../../shared/headers/header-mobile
+
+block append style
+    link(rel="stylesheet", href="css/market-place-1.css")
+
+block page_content
+
+    .ps-page--my-account
+        .ps-breadcrumb
+            .container
+                ul.breadcrumb
+                    li: a(href='index.html') Home
+                    li My account
+        include ../../partials/pages/my-account
+    include ../../partials/sections/newsletter
+    include ../../shared/footers/footer-2
+
+

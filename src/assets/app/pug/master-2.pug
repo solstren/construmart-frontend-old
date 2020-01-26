@@ -1,0 +1,65 @@
+include utilties/env
+include utilties/mixins
+doctype html
+
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        meta(name="format-detection", content="telephone=no")
+        meta(name="apple-mobile-web-app-capable", content="yes")
+        link(href="apple-touch-icon.png" rel="apple-touch-icon")
+        link(href="favicon.png" rel="icon" )
+        meta(name="author", content="")
+        meta(name="keywords" content="")
+        meta(name="description", content="")
+        block title
+            title #{title}
+        <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700&amp;subset=latin-ext" rel="stylesheet">
+        block style
+            link(rel="stylesheet", href="plugins/font-awesome/css/font-awesome.min.css")
+            link(rel="stylesheet", href="fonts/Linearicons/Linearicons/Font/demo-files/demo.css")
+            link(rel="stylesheet", href="plugins/bootstrap4/css/bootstrap.min.css")
+            link(rel="stylesheet", href="plugins/owl-carousel/assets/owl.carousel.css")
+            link(rel="stylesheet", href="plugins/slick/slick/slick.css")
+            link(rel="stylesheet", href="plugins/lightGallery-master/dist/css/lightgallery.min.css")
+            link(rel="stylesheet", href="plugins/jquery-bar-rating/dist/themes/fontawesome-stars.css")
+            link(rel="stylesheet", href="plugins/jquery-ui/jquery-ui.min.css")
+            link(rel="stylesheet", href="plugins/YTPlayer/dist/css/jquery.mb.YTPlayer.min.css")
+            link(rel="stylesheet", href="plugins/select2/dist/css/select2.min.css")
+            link(rel="stylesheet", href="css/style.css")
+    body(class="layout-2")
+        block data
+        block page_header
+        block page_content
+        #back2top: i.pe-7s-angle-up
+        .ps-site-overlay
+        include shared/loading
+        include shared/search
+        //include shared/cart-sidebar
+        //- JS Library
+        // Plugins
+        script(src="plugins/jquery-1.12.4.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js")
+        script(src="plugins/owl-carousel/owl.carousel.min.js")
+        script(src="plugins/bootstrap4/js/bootstrap.min.js")
+        script(src="plugins/imagesloaded.pkgd.js")
+        script(src="plugins/masonry.pkgd.min.js")
+        script(src="plugins/isotope.pkgd.min.js")
+        script(src="plugins/jquery.matchHeight-min.js")
+        script(src="plugins/slick/slick/slick.min.js")
+        script(src="plugins/jquery-bar-rating/dist/jquery.barrating.min.js")
+        script(src="plugins/slick-animation.min.js")
+        script(src="plugins/lightGallery-master/dist/js/lightgallery-all.min.js")
+        script(src="plugins/jquery-ui/jquery-ui.min.js")
+        script(src="plugins/sticky-sidebar/dist/sticky-sidebar.min.js")
+        script(src="plugins/YTPlayer/dist/jquery.mb.YTPlayer.min.js")
+        script(src="plugins/jquery.slimscroll.min.js")
+        script(src="plugins/select2/dist/js/select2.full.min.js")
+        script(src="plugins/gmap3.min.js")
+
+        block page_scripts
+        // Custom scripts
+        script(src="js/main.js")
+        script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxflHHc5FlDVI-J71pO7hM1QJNW1dRp4U&region=GB")

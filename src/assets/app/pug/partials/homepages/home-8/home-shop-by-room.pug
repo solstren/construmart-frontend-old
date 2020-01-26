@@ -1,0 +1,12 @@
+.ps-section--furniture.ps-home-shop-by-room
+    .container
+        .ps-section__header: h3 SHOP BY ROOM
+        .ps-section__content
+            .row
+                each category in furnitureRoom
+                    +column({cols: [3, 4, 4, 6, 12]})
+                        .ps-block--category-room
+                            .ps-block__thumbnail
+                                a(href='shop-default.html'): img(src=category.imagePath alt="")
+                            .ps-block__content
+                                a(href='#') #{category.title}
