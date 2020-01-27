@@ -1,59 +1,62 @@
 <div class="ps-page--product">
-  <div class="ps-container">
-    <div class="ps-page__container">
-      <div class="ps-page__left">
-        <div class="ps-product--detail ps-product--fullwidth">
-          <div class="ps-product__header">
-            <div class="ps-product__thumbnail" data-vertical="true">
-              <figure>
-                <div class="ps-wrapper">
-                  <div class="ps-product__gallery" data-arrow="true">
-                    <div class="item">
-                      <a href="{{baseUrl + 'uploads/' + product.imageName}}">
-                        <img style="width: 100%; height: 300px;" src="{{baseUrl + 'uploads/' + product.imageName}}" alt="">
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </figure>
-            </div>
-            <div class="ps-product__info">
-              <h1>{{product.name}}</h1>
-              <div class="ps-product__meta">
-                <div class="ps-product__rating">
-                  <select class="ps-rating" data-read-only="true">
-                    <option value="1">1</option>
-                    <option value="1">2</option>
-                    <option value="1">3</option>
-                    <option value="1">4</option>
-                    <option value="2">5</option>
-                  </select><span>(1 review)</span>
-                </div>
-              </div>
-              <h4 class="ps-product__price">₦{{product.price | cm_money_format}}</h4>
-              <div class="ps-product__desc">
-                <p>{{product.description}}</p>
-              </div>
-              <div class="ps-product__shopping">
-                <figure>
-                  <figcaption>Quantity</figcaption>
-                  <div class="form-group--number">
-                    <button class="up"><i class="fa fa-plus"></i></button>
-                    <button class="down"><i class="fa fa-minus"></i></button>
-                    <input class="form-control" type="text" placeholder="1">
-                  </div>
-                </figure><a class="ps-btn ps-btn--gray" href="#">Add to cart</a><a class="ps-btn" href="#">Buy Now</a>
-                <div class="ps-product__actions"><a href="#"><i class="icon-heart"></i></a><a href="#"><i class="icon-chart-bars"></i></a></div>
-              </div>
-             <!-- <div class="ps-product__specification"><a class="report" href="#">Report Abuse</a>
+    <div class="ps-container">
+        <div class="ps-page__container">
+            <div class="ps-page__left">
+                <div class="ps-product--detail ps-product--fullwidth">
+                    <div class="ps-product__header">
+                        <div class="ps-product__thumbnail" data-vertical="true">
+                            <figure>
+                                <div class="ps-wrapper">
+                                    <div class="ps-product__gallery" data-arrow="true">
+                                        <div class="item">
+                                            <a href="{{baseUrl + 'uploads/' + product.imageName}}">
+                                                <img style="width: 100%; height: 300px;"
+                                                    src="{{baseUrl + 'uploads/' + product.imageName}}" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figure>
+                        </div>
+                        <div class="ps-product__info">
+                            <h1>{{product.name}}</h1>
+                            <div class="ps-product__meta">
+                                <div class="ps-product__rating">
+                                    <select class="ps-rating" data-read-only="true">
+                                        <option value="1">1</option>
+                                        <option value="1">2</option>
+                                        <option value="1">3</option>
+                                        <option value="1">4</option>
+                                        <option value="2">5</option>
+                                    </select><span>(1 review)</span>
+                                </div>
+                            </div>
+                            <h4 class="ps-product__price">₦{{product.price | cm_money_format}}</h4>
+                            <div class="ps-product__desc">
+                                <p>{{product.description}}</p>
+                            </div>
+                            <div class="ps-product__shopping">
+                                <figure>
+                                    <figcaption>Quantity</figcaption>
+                                    <div class="form-group--number">
+                                        <button class="up"><i class="fa fa-plus"></i></button>
+                                        <button class="down"><i class="fa fa-minus"></i></button>
+                                        <input class="form-control" type="text" placeholder="1">
+                                    </div>
+                                </figure><a class="ps-btn ps-btn--gray" href="#">Add to cart</a><a class="ps-btn"
+                                    href="#">Buy Now</a>
+                                <div class="ps-product__actions"><a href="#"><i class="icon-heart"></i></a><a
+                                        href="#"><i class="icon-chart-bars"></i></a></div>
+                            </div>
+                            <!-- <div class="ps-product__specification"><a class="report" href="#">Report Abuse</a>
                 <p><strong>SKU:</strong> SF1133569600-1</p>
                 <p class="categories"><strong> Categories:</strong><a href="#">Consumer Electronics</a>,<a href="#"> Refrigerator</a>,<a href="#">Babies & Moms</a></p>
                 <p class="tags"><strong> Tags</strong><a href="#">sofa</a>,<a href="#">technologies</a>,<a href="#">wireless</a></p>
               </div>
               <div class="ps-product__sharing"><a class="facebook" href="#"><i class="fa fa-facebook"></i></a><a class="twitter" href="#"><i class="fa fa-twitter"></i></a><a class="google" href="#"><i class="fa fa-google-plus"></i></a><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></div>-->
-            </div>
-          </div>
-          <!--div class="ps-product__content ps-tab-root">
+                        </div>
+                    </div>
+                    <!--div class="ps-product__content ps-tab-root">
             <ul class="ps-tab-list">
               <li class="active"><a href="#tab-1">Description</a></li>
               <li><a href="#tab-2">Specification</a></li>
@@ -203,16 +206,16 @@
               </div>
             </div>
           </div>-->
+                </div>
+            </div>
+            <div class="ps-page__right">
+                <aside class="widget widget_product widget_features">
+                    <p><i class="icon-network"></i> Shipping worldwide</p>
+                    <p><i class="icon-3d-rotate"></i> Free 7-day return if eligible, so easy</p>
+                    <p><i class="icon-receipt"></i> Supplier give bills for this product.</p>
+                    <p><i class="icon-credit-card"></i> Pay online or when receiving goods</p>
+                </aside>
+            </div>
         </div>
-      </div>
-      <div class="ps-page__right">
-        <aside class="widget widget_product widget_features">
-          <p><i class="icon-network"></i> Shipping worldwide</p>
-          <p><i class="icon-3d-rotate"></i> Free 7-day return if eligible, so easy</p>
-          <p><i class="icon-receipt"></i> Supplier give bills for this product.</p>
-          <p><i class="icon-credit-card"></i> Pay online or when receiving goods</p>
-        </aside>
-      </div>
     </div>
-  </div>
 </div>
