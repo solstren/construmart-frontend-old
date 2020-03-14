@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
-import {ProductsService} from "../../shared/services/products.service";
-import {environment} from "../../../environments/environment";
+import {ActivatedRoute} from '@angular/router';
+import {ProductsService} from '../../shared/services/products.service';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-product',
@@ -19,7 +19,6 @@ export class ProductComponent implements OnInit {
     this.productId = this.route.snapshot.paramMap.get('id');
     this.productService.getProduct(this.productId).subscribe((data: any) => {
       this.product = data.body;
-      console.log(this.product);
     });
   }
 

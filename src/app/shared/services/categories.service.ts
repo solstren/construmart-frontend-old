@@ -17,7 +17,7 @@ export class CategoriesService {
     return this.dataService.getList(this.baseUrl + 'categories', req);
   }
 
-  public postCategory(data: Object) {
+  public postCategory(data: object) {
     return this.http.post(this.baseUrl + 'categories', data);
   }
 
