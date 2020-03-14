@@ -4,6 +4,7 @@ import { LandingComponent } from './pages/landing/landing.component';
 import { CategoriesResolver, ProductResolver } from './shared/resolvers/construmart.resolver';
 import { ProductComponent } from './pages/product/product.component';
 import { ProductListComponent } from './pages/product-list/product-list.component';
+import {AuthComponent} from "./pages/auth/auth.component";
 
 
 const routes: Routes = [
@@ -29,6 +30,10 @@ const routes: Routes = [
     {
         path: 'product/:id',
         component: ProductComponent
+    },
+    {
+        path: 'auth',
+        component: AuthComponent
     }
 ];
 

@@ -13,6 +13,9 @@ import { HttpClientModule } from "@angular/common/http";
 import { ProductComponent } from './pages/product/product.component';
 import { ProductListComponent } from './pages/product-list/product-list.component';
 import { MoneyFormat } from "./shared/pipes/construmart.pipe";
+import { AuthComponent } from './pages/auth/auth.component';
+import {FormsModule} from "@angular/forms";
+import {AuthService} from "./shared/services/auth.service";
 
 @NgModule({
     declarations: [
@@ -20,13 +23,15 @@ import { MoneyFormat } from "./shared/pipes/construmart.pipe";
         LandingComponent,
         ProductComponent,
         ProductListComponent,
-        MoneyFormat
+        MoneyFormat,
+        AuthComponent
     ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
+  ],
     providers: [
         UtilitiesService,
         CategoriesService,
@@ -34,6 +39,7 @@ import { MoneyFormat } from "./shared/pipes/construmart.pipe";
         ProductResolver,
         ConstantsService,
         NotificationService,
+        AuthService,
     ],
     bootstrap: [AppComponent]
 })

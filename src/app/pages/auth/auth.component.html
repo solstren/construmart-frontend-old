@@ -1,0 +1,90 @@
+<div class="ps-page--my-account">
+  <div class="ps-breadcrumb">
+    <div class="container">
+      <ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li>My account</li>
+      </ul>
+    </div>
+  </div>
+  <div class="ps-my-account">
+    <div class="container">
+      <form class="ps-form--account ps-tab-root" action="link.html" method="get">
+        <ul class="ps-tab-list">
+          <li class="active" (click)="setIsRegister(false)"><a href="#sign-in">Login</a></li>
+          <li><a href="#register" (click)="setIsRegister(true)">Register</a></li>
+        </ul>
+        <div class="ps-tabs">
+          <div class="ps-tab active" id="sign-in">
+            <div class="ps-form__content">
+              <form name="login-form" id="login-form">
+                <h5>Log In Your Account</h5>
+                <div class="form-group">
+                  <input class="form-control" name="email" [(ngModel)]="authObject.email" type="text" placeholder="Email address">
+                </div>
+                <div class="form-group form-forgot">
+                  <input class="form-control" name="password" [(ngModel)]="authObject.password" type="password" placeholder="Password"><a href="">Forgot?</a>
+                </div>
+                <!--<div class="form-group">
+                  <div class="ps-checkbox">
+                    <input class="form-control" type="checkbox" id="remember-me" name="remember-me"/>
+                    <label for="remember-me">Rememeber me</label>
+                  </div>
+                </div>-->
+                <div class="form-group submtit">
+                  <button class="ps-btn ps-btn--fullwidth" (click)="login()">Login</button>
+                </div>
+              </form>
+            </div>
+            <div class="ps-form__footer">
+              <!--<p>Connect with:</p>
+              <ul class="ps-list&#45;&#45;social">
+                <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a class="google" href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
+              </ul>-->
+            </div>
+          </div>
+          <div class="ps-tab" id="register">
+            <div class="ps-form__content">
+              <form id="register-form" name="register-form">
+                <h5>Register An Account</h5>
+                <div class="form-group" *ngIf="otpAvailable == false">
+                  <input class="form-control" name="firstname" [(ngModel)]="authObject.firstname" type="text" placeholder="First name">
+                </div>
+                <div class="form-group" *ngIf="otpAvailable == false">
+                  <input class="form-control" name="lastname" [(ngModel)]="authObject.lastname" type="text" placeholder="Last name">
+                </div>
+                <div class="form-group" *ngIf="otpAvailable == false">
+                  <input class="form-control" name="phonenumber" [(ngModel)]="authObject.phoneNumber" type="text" placeholder="Phone number">
+                </div>
+                <div class="form-group" *ngIf="otpAvailable == false">
+                  <input class="form-control" name="email" [(ngModel)]="authObject.email" type="text" placeholder="Email address">
+                </div>
+                <div class="form-group" *ngIf="otpAvailable == false">
+                  <input class="form-control" name="password" [(ngModel)]="authObject.password" type="password" placeholder="Password">
+                </div>
+                <div class="form-group" *ngIf="otpAvailable">
+                  <input class="form-control" name="email" [(ngModel)]="verifyOtpObject.otp" type="text" placeholder="Enter OTP sent to your email">
+                </div>
+                <div class="form-group submtit">
+                  <button class="ps-btn ps-btn--fullwidth" (click)="register();">Register</button>
+                </div>
+              </form>
+            </div>
+            <div class="ps-form__footer">
+              <!--<p>Connect with:</p>
+              <ul class="ps-list&#45;&#45;social">
+                <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a class="google" href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
+              </ul>-->
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

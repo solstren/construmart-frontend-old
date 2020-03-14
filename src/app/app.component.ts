@@ -10,6 +10,7 @@ import {
 } from "@angular/router";
 import { CategoriesService } from "./shared/services/categories.service";
 import { UtilitiesService } from "./shared/services/utilities.service";
+import {ProductsService} from "./shared/services/products.service";
 
 @Component({
     selector: 'app-root',
@@ -20,14 +21,19 @@ export class AppComponent {
     title = 'construmart-frontend';
     categories: any = [];
     req: any = {};
+    hotAndNewProducts: any = [];
     public url: string;
 
-    constructor(private route: ActivatedRoute, private categoryService: CategoriesService, private router: Router, private utils: UtilitiesService) {
+    constructor(private route: ActivatedRoute, private categoryService: CategoriesService, private router: Router, private utils: UtilitiesService, private productService: ProductsService) {
         this.req.start = 0;
         this.req.length = 0;
         this.categoryService.getCategories(this.req).subscribe(data => {
             this.categories = data.data.categories;
-            console.log(this.categories);
+        });
+
+        this.productService.getProducts(this.req).subscribe(data => {
+          this.hotAndNewProducts = data.data.products;
+          console.log(this.hotAndNewProducts);
         });
 
         this.router.events.subscribe((event: RouterEvent) => {
