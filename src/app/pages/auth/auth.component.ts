@@ -48,11 +48,11 @@ export class AuthComponent implements OnInit {
       console.log(data);
     }, error => {
       this.utils.hideLoading();
-      if (error.error.body.message[0]) {
-        toastr.error(error.error.message);
-      } else{
-        toastr.error(error.error.body.message);
-      }
+      // if (error.error.body.message[0]) {
+      //   toastr.error(error.error.message);
+      // } else{
+      toastr.error(error.error.body.message);
+      // }
     });
   }
 
