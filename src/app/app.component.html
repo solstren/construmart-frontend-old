@@ -46,8 +46,8 @@
           <div class="ps-block--user-header">
             <div class="ps-block__left"><i class="icon-user"></i></div>
             <div class="ps-block__right">
-              <a routerLink="auth">Login</a>
-              <a routerLink="auth">Register</a></div>
+              <a (click)="goToLogin()">Login</a>
+              <a (click)="goToLogin()">Register</a></div>
           </div>
         </div>
       </div>
@@ -119,7 +119,7 @@
         </div>
         <div class="ps-block--user-header">
           <div class="ps-block__left"><i class="icon-user"></i></div>
-          <div class="ps-block__right"><a href="my-account.html">Login</a><a href="my-account.html">Register</a></div>
+          <div class="ps-block__right"><a (click)="goToLogin()">Login</a><a (click)="goToLogin()">Register</a></div>
         </div>
       </div>
     </div>

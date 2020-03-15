@@ -66,6 +66,10 @@ export class AppComponent {
         location.href = '/';
     }
 
+    goToLogin(){
+      location.href = '/auth';
+    }
+
 
 
 
