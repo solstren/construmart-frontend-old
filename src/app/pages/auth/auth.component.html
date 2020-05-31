@@ -2,7 +2,7 @@
   <div class="ps-breadcrumb">
     <div class="container">
       <ul class="breadcrumb">
-        <li><a href="index.html">Home</a></li>
+        <li><a>Home</a></li>
         <li>My account</li>
       </ul>
     </div>
@@ -18,21 +18,29 @@
           <div class="ps-tab active" id="sign-in">
             <div class="ps-form__content">
               <form name="login-form" id="login-form">
-                <h5>Log In Your Account</h5>
+                <h5 *ngIf="!isForgotPassword">Log In Your Account</h5>
+                <h5 *ngIf="isForgotPassword">Have you forgotten your password?</h5>
                 <div class="form-group">
-                  <input class="form-control" name="email" [(ngModel)]="authObject.email" type="text" placeholder="Email address">
+                  <input class="form-control" name="email" [(ngModel)]="authObject.email" *ngIf="!isForgotPasswordOtpAvailable" type="text" placeholder="Email address">
                 </div>
-                <div class="form-group form-forgot">
-                  <input class="form-control" name="password" [(ngModel)]="authObject.password" type="password" placeholder="Password"><a href="">Forgot?</a>
+                <div class="form-group">
+                  <input class="form-control" name="initiateOtp" [(ngModel)]="forgotPasswordObject.otp" *ngIf="isForgotPasswordOtpAvailable" type="password" placeholder="Input OTP">
                 </div>
-                <!--<div class="form-group">
-                  <div class="ps-checkbox">
-                    <input class="form-control" type="checkbox" id="remember-me" name="remember-me"/>
-                    <label for="remember-me">Rememeber me</label>
+                <div class="form-group">
+                  <input class="form-control" name="newPassword" [(ngModel)]="forgotPasswordObject.newPassword" *ngIf="isForgotPasswordOtpAvailable" type="password" placeholder="New password">
+                </div>
+                <div class="form-group form-forgot" *ngIf="!isForgotPassword">
+                  <input class="form-control" name="password" [(ngModel)]="authObject.password" type="password" placeholder="Password"><a class="pointer" (click)="forgotPassword()">Forgot?</a>
+                </div>
+                <div class="form-group" *ngIf="isForgotPasswordOtpAvailable">
+                  <div class="ps-checkbox  mb-4" style="float: right;">
+                    <a (click)="resendToken()" style="cursor: pointer; color: #3471D7;">Resend token</a>
                   </div>
-                </div>-->
+                </div>
                 <div class="form-group submtit">
-                  <button class="ps-btn ps-btn--fullwidth" (click)="login()">Login</button>
+                  <button class="ps-btn ps-btn--fullwidth" *ngIf="!isForgotPassword" (click)="login()">Login</button>
+                  <button class="ps-btn ps-btn--fullwidth" *ngIf="isForgotPassword && !isForgotPasswordOtpAvailable" (click)="requestOtp()">Reset Password</button>
+                  <button class="ps-btn ps-btn--fullwidth" *ngIf="isForgotPasswordOtpAvailable" (click)="confirmOtp()">Submit</button>
                 </div>
               </form>
             </div>
@@ -67,6 +75,11 @@
                 </div>
                 <div class="form-group" *ngIf="otpAvailable">
                   <input class="form-control" name="email" [(ngModel)]="verifyOtpObject.otp" type="text" placeholder="Enter OTP sent to your email">
+                </div>
+                <div class="form-group" *ngIf="otpAvailable">
+                  <div class="ps-checkbox  mb-4" style="float: right;">
+                    <a (click)="resendToken()" style="cursor: pointer; color: #3471D7;">Resend token</a>
+                  </div>
                 </div>
                 <div class="form-group submtit">
                   <button class="ps-btn ps-btn--fullwidth" (click)="register();">Register</button>
