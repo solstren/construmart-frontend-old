@@ -1,7 +1,7 @@
-import {Injectable} from "@angular/core";
-import {Router} from "@angular/router";
-import {UtilitiesService} from "./utilities.service";
-import {HttpHandler, HttpRequest} from "@angular/common/http";
+import {Injectable} from '@angular/core';
+import {Router} from '@angular/router';
+import {UtilitiesService} from './utilities.service';
+import {HttpHandler, HttpRequest} from '@angular/common/http';
 
 @Injectable()
 export class ConstrumartInterceptor implements ConstrumartInterceptor {
@@ -17,10 +17,16 @@ export class ConstrumartInterceptor implements ConstrumartInterceptor {
       return next.handle(req);
     }
 
-    const newReq = req.clone({
-      headers: req.headers.set('Authorization', `Bearer ${JSON.parse(localStorage.token)}`)
-    });
+    // if (localStorage.getItem('token')) {
+    // const token = JSON.parse(localStorage.token);
+    /*const newReq = req.clone({
+        headers: req.headers.set('Authorization', `Bearer ${token}`)
+      });*/
 
-    return next.handle(newReq);
+    // return next.handle(newReq);
+    // }
+
+
+
   }
 }

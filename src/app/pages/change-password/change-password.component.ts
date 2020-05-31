@@ -22,10 +22,15 @@ export class ChangePasswordComponent implements OnInit {
     this.authService.changePassword(this.changePassword).subscribe((data: any) => {
       if (data.status === true) {
           toastr.success(data.message);
-          location.href = '/landing';
+          location.href = 'landing';
       } else {
+        /*if (data.body.httpStatus === 401) {
+          toastr.error(data.body.error);
+        }*/
         toastr.error(data.message);
       }
+    }, error => {
+      toastr.error(error.error.body.message);
     });
   }
 }

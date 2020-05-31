@@ -81,4 +81,9 @@ export class AppComponent {
   changePassword() {
 
   }
+
+  logout() {
+    localStorage.clear();
+    location.href = 'landing';
+  }
 }

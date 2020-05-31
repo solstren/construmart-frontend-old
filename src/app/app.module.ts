@@ -43,11 +43,11 @@ import {ConstrumartInterceptor} from "./shared/services/ConstrumartInterceptor";
         ConstantsService,
         NotificationService,
         AuthService,
-      {
+      /*{
         provide: HTTP_INTERCEPTORS,
         useClass: ConstrumartInterceptor,
         multi: true
-      }
+      }*/
     ],
     bootstrap: [AppComponent]
 })

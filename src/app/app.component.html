@@ -38,7 +38,7 @@
     </div>
   </div>
   <nav class="navigation">
-    <div class="ps-container">
+    <div class="ps-container" style="height: 50px;">
       <div class="navigation__left">
         <div class="menu--product-categories">
           <div class="menu__toggle"><i class="icon-menu"></i><span> Shop by Category</span></div>
@@ -58,7 +58,7 @@
           </li>
         </ul>
         <ul class="navigation__extra menu">
-          <li><a href="#">Tract your order</a></li>
+          <li><a style="cursor: pointer;" *ngIf="authenticated" (click)="logout()">Logout</a></li>
         </ul>
       </div>
     </div>
@@ -71,7 +71,7 @@
     </div>
     <div class="header__right">
       <ul class="navigation__extra">
-        <li><a href="#">Tract your order</a></li>
+        <li><a style="cursor: pointer;" *ngIf="authenticated" (click)="logout()">Logout</a></li>
       </ul>
     </div>
   </div>
