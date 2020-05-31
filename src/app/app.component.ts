@@ -7,10 +7,10 @@ import {
     NavigationStart,
     Router,
     RouterEvent
-} from "@angular/router";
-import { CategoriesService } from "./shared/services/categories.service";
-import { UtilitiesService } from "./shared/services/utilities.service";
-import {ProductsService} from "./shared/services/products.service";
+} from '@angular/router';
+import { CategoriesService } from './shared/services/categories.service';
+import { UtilitiesService } from './shared/services/utilities.service';
+import {ProductsService} from './shared/services/products.service';
 
 @Component({
     selector: 'app-root',
@@ -23,6 +23,7 @@ export class AppComponent {
     req: any = {};
     hotAndNewProducts: any = [];
     public url: string;
+    authenticated = false;
 
     constructor(private route: ActivatedRoute, private categoryService: CategoriesService, private router: Router, private utils: UtilitiesService, private productService: ProductsService) {
         this.req.start = 0;
@@ -39,6 +40,12 @@ export class AppComponent {
         this.router.events.subscribe((event: RouterEvent) => {
             this.navigationInterceptor(event);
         });
+
+        if (localStorage.getItem('token')) {
+        this.authenticated = true;
+      } else {
+        this.authenticated = false;
+      }
     }
 
     getYear() {
@@ -66,13 +73,12 @@ export class AppComponent {
         location.href = '/';
     }
 
-    goToLogin(){
+    goToLogin() {
       location.href = '/auth';
     }
 
 
+  changePassword() {
 
-
-
-
+  }
 }

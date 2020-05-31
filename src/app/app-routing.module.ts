@@ -5,6 +5,7 @@ import { CategoriesResolver, ProductResolver } from './shared/resolvers/construm
 import { ProductComponent } from './pages/product/product.component';
 import { ProductListComponent } from './pages/product-list/product-list.component';
 import {AuthComponent} from "./pages/auth/auth.component";
+import {ChangePasswordComponent} from "./pages/change-password/change-password.component";
 
 
 const routes: Routes = [
@@ -34,6 +35,10 @@ const routes: Routes = [
     {
         path: 'auth',
         component: AuthComponent
+    },
+    {
+      path: 'change-password',
+      component: ChangePasswordComponent
     }
 ];
 
